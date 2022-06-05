@@ -13,4 +13,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(registerForm: NgForm): void {
+    const userRegister = registerForm.value;
+  }
+
 }

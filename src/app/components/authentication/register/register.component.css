@@ -1,0 +1,49 @@
+.register-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.register-form h1 {
+    font-size: 20px;
+}
+
+.register-form {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffffbf;;
+    height: 80%;
+    width: 25%;
+    min-width: 300px;
+    border-radius: 5%;
+}
+
+label {
+    font-size: 16px;
+}
+
+.register-form input,
+select {
+    padding: 1%;
+    width: 65%;
+    min-width: 100px;
+}
+
+select {
+    min-width: 40px;
+    width: 40px;
+}
+
+#register-button {
+    padding: 1%;
+    margin-top: 5%;
+    width: 70px;
+    min-width: 70px;
+}

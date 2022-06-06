@@ -1,0 +1,33 @@
+.login-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.login-form h1 {
+    font-size: 20px;
+}
+
+.login-form {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffffbf;
+    height: 40%;
+    width: 20%;
+    min-width: 300px;
+    border-radius: 5%;
+}
+
+.login-form input {
+    padding: 1%;
+    width: 20%;
+    min-width: 200px;
+    margin: 10px;
+}

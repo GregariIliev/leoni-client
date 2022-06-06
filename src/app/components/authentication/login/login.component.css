@@ -31,3 +31,10 @@
     min-width: 200px;
     margin: 10px;
 }
+
+#submit-login {
+    padding: 1%;
+    margin-top: 5%;
+    width: 100px;
+    min-width: 70px;
+}

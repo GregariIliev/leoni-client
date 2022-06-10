@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     try {
       const admin = loginForm.value;
 
-      if (admin.email.trim() || admin.password.trim()) {
+      if (!admin.email.trim() || !admin.password.trim()) {
         // make more validations to avoid send invalid request
   }
 }

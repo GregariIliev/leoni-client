@@ -10,8 +10,7 @@ import { AuthService } from '../../../service/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  constructor(private readonly authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }

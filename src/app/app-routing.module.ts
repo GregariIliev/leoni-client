@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterComponent } from '../app/components/authentication/register/register.component';
 import { LoginComponent } from './components/authentication/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { AuthorizationGuard } from './guards/authorization.guard';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },

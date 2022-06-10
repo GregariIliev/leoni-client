@@ -21,5 +21,18 @@ export class LoginComponent implements OnInit {
 
       if (!admin.email.trim() || !admin.password.trim()) {
         // make more validations to avoid send invalid request
+        throw new Error('Invalid email or password')
+      }
+
+
+      this.authService.login(admin).subscribe(async (response: any) => {
+        response ? this.router.navigate(['']) : this.router.navigate(['/login']);
+      })
+
+    } catch (err) {
+      console.log(err);
+      
+      //// create error component
+    }
   }
 }

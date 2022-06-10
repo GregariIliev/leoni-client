@@ -15,7 +15,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLogin(loginForm: NgForm){
-    
+  async onLogin(loginForm: NgForm) {
+    try {
+      const admin = loginForm.value;
+
+      if (admin.email.trim() || admin.password.trim()) {
+        // make more validations to avoid send invalid request
   }
 }

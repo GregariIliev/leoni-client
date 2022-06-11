@@ -1,5 +1,5 @@
 <div class="register-container">
-    <form method="POST" class="register-form" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+    <form method="POST" class="register-form">
         <h1>Register Employee</h1>
         <div class="register-login-data">
             <input name="email" type="text" placeholder="Email" ngModel required>
@@ -39,6 +39,6 @@
                 </select>
             </div>
         </div>
-        <input id="register-button" type="submit" value="Register" [disabled]="registerForm.invalid">
+        <input id="register-button" type="submit" value="Register">
     </form>
 </div>

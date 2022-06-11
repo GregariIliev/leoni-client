@@ -22,9 +22,6 @@ export class AuthService {
   get isLogged(): Observable<boolean> {
     return this.logged;
   }
-
-  }
-
   login(admin: any): Observable<any> {
     return this.http.post<any>(`${this.API}/employees`, admin)
       .pipe(
@@ -44,14 +41,4 @@ export class AuthService {
         })
       );
   }
-
-
-
-  // update(user: User): Observable<Token> {
-  //   return this.http.put<User>(`${this.API}/${user}`, user);  /// change user to user.id
-  // }
-
-  // delete(id: string): Observable<void> {
-  //   return this.http.delete<void>(`${this.API}/${id}`);
-  // }
 }

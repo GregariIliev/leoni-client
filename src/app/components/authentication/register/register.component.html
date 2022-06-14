@@ -18,6 +18,10 @@
                 </select>
             </div>
             <div class="register-select">
+                <label for="position">Positions</label>
+                <select name="position" id="position" (change)="onChangePosition($event)" formControlName="position">
+                    <option value="" disabled selected hidden>Select position</option>
+                    <option [value]="position.id" *ngFor="let position of positions">{{position.name}}</option>
                 </select>
             </div>
             <div class="register-select">

@@ -11,6 +11,10 @@
         <div class="register-work-data">
             <div class="register-select">
                 <label for="department">Department</label>
+                <select name="department" id="department" (change)="onChangeDepartment($event)"
+                    formControlName="department">
+                    <option value="" disabled selected hidden>Select department</option>
+                    <option [value]="department.id" *ngFor="let department of departments">{{department.name}}</option>
                 </select>
             </div>
             <div class="register-select">

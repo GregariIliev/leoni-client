@@ -28,6 +28,16 @@ export class RegisterComponent implements OnInit {
 
     this.form = this.initForm();
 
+    try {
+      this.departmentService.getAllDepartments().subscribe(async (response: any) => {
+        this.departments = response;
+        this.form.patchValue(this.departments);
+      });
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
   }
 
   onSubmit(registerForm: NgForm): void {

@@ -38,6 +38,16 @@ export class RegisterComponent implements OnInit {
       console.log(err);
     }
   }
+
+  onChangeDepartment(event: any) {
+    const selectedId = Number(event.target.value);
+    const selectedDepartmentIndex = this.departments.findIndex((d: any) => d.id === selectedId);
+
+    this.positions = this.departments[selectedDepartmentIndex].Positions;
+    //this.form.patchValue(this.positions);  ///pathValue not updated the options
+
+    this.shifts = this.positions[0].shift.split(', ');
+  }
   }
 
   onSubmit(registerForm: NgForm): void {

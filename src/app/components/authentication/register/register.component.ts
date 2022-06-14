@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
 
 
   constructor(
+    private readonly departmentService: DepartmentService,
     private readonly fb: FormBuilder
   ) { }
 

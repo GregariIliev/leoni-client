@@ -26,6 +26,9 @@
             </div>
             <div class="register-select">
                 <label for="shift">Shift</label>
+                <select name="shift" id="shift" formControlName="shift">
+                    <option value="" disabled selected hidden>Select shift</option>
+                    <option [value]="shift" *ngFor="let shift of shifts">{{shift}}</option>
                 </select>
             </div>
         </div>

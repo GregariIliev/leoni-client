@@ -16,7 +16,12 @@ export class RegisterComponent implements OnInit {
   public positions!: any;
   public shifts!: any;
 
-  constructor() { }
+  form!: FormGroup;
+
+
+  constructor(
+    private readonly fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
   }

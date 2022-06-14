@@ -27,6 +27,7 @@ import { RegisterComponent } from './components/authentication/register/register
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

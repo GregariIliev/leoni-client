@@ -9,7 +9,8 @@ import { AuthorizationGuard } from './guards/authorization.guard';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: 'full', title: 'Dashboard', canActivate: [AuthorizationGuard] },
-  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent, title: 'Register'},
+  { path: 'login', component: LoginComponent, title: 'Login' },
 ];
 
 @NgModule({

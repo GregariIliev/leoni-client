@@ -48,6 +48,14 @@ export class RegisterComponent implements OnInit {
 
     this.shifts = this.positions[0].shift.split(', ');
   }
+
+
+  onChangePosition(event: any) {
+    const selectedId = Number(event.target.value);
+    const selectedPositionIndex = this.positions.findIndex((p: any) => p.id === selectedId);
+
+   // this.form.patchValue(this.positions[selectedPositionIndex].shift.split(', ')); ///pathValue not updated the options
+    this.shifts = this.positions[selectedPositionIndex].shift.split(', ');
   }
 
   onSubmit(registerForm: NgForm): void {

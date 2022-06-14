@@ -3,14 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, catchError, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { AuthorizationGuard } from '../guards/authorization.guard';
-
-export interface Employee { }
-
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class EmployeeService {
   private readonly API = environment.api;
 
   private logged = new BehaviorSubject<boolean>(false);
@@ -22,6 +18,7 @@ export class AuthService {
   get isLogged(): Observable<boolean> {
     return this.logged;
   }
+  
   login(admin: any): Observable<any> {
     return this.http.post<any>(`${this.API}/employees`, admin)
       .pipe(

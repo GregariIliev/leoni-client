@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       }
 
 
-      this.authService.login(admin).subscribe(async (response: any) => {
+      this.employeeService.login(admin).subscribe(async (response: any) => {
         response ? this.router.navigate(['']) : this.router.navigate(['/login']);
       })
 

@@ -7,8 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 import { LoginComponent } from './components/authentication/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RegisterComponent } from './components/authentication/register/register.component';
 
 @NgModule({
   declarations: [

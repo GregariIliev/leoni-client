@@ -21,6 +21,7 @@ import { RegisterComponent } from './components/authentication/register/register
     RegisterComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

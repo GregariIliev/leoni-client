@@ -29,6 +29,18 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(registerForm: NgForm): void {
     const userRegister = registerForm.value;
+
+  initForm(): FormGroup {
+    return this.fb.group({
+      firstName: ['', [Validators.required]],
+      middleName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      department: ['', [Validators.required]],
+      position: ['', [Validators.required]],
+      shift: ['', [Validators.required]],
+    })
   }
 
 }

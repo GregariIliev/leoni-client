@@ -12,6 +12,9 @@ import { DepartmentService } from 'src/app/service/department.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  public departments!: any;
+  public positions!: any;
+  public shifts!: any;
 
   constructor() { }
 

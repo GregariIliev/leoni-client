@@ -57,8 +57,18 @@ export class RegisterComponent implements OnInit {
     this.shifts = this.positions[selectedPositionIndex].shift.split(', ');
   }
 
-  onSubmit(registerForm: NgForm): void {
-    const userRegister = registerForm.value;
+  onSubmit() {
+    try {
+      const employee = this.form.value;
+      this.employeeService.createEmplyee(employee).subscribe((response) => {
+        console.log(response);
+
+      })
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   initForm(): FormGroup {
     return this.fb.group({

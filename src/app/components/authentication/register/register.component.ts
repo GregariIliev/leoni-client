@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
     const selectedId = Number(event.target.value);
     const selectedPositionIndex = this.positions.findIndex((p: any) => p.id === selectedId);
 
-   // this.form.patchValue(this.positions[selectedPositionIndex].shift.split(', ')); ///pathValue not updated the options
+    // this.form.patchValue(this.positions[selectedPositionIndex].shift.split(', ')); ///pathValue not updated the options
     this.shifts = this.positions[selectedPositionIndex].shift.split(', ');
   }
 

@@ -1,19 +1,19 @@
-<div class="dashboard-container">
-    <div class="dashboard">
-        <div class="dsh-sidebar">
-            <div class="dsh-avatar">
+<div [ngClass]="dashboard-container">
+    <div [ngClass]="dashboard">
+        <div [ngClass]="dsh-sidebar">
+            <div [ngClass]="dsh-avatar">
                 <img src="/assets/profile.png" alt="Avatar" class="avatar">
-                <a href="#" routerLink="/register" class="dsh-button-hire">Hire new employee</a>
+                <a href="#" routerLink="/register" [ngClass]="dsh-button-hire">Hire new employee</a>
             </div>
-            <ul class="dsh-unorder-list">
+            <ul [ngClass]="dsh-unorder-list">
                 <li><a href="#" routerLink="/">Dashboard</a></li>
                 <li><a href="#" routerLink="/employees">Employees</a></li>
                 <li><a href="#" routerLink="/departments">Departments</a></li>
                 <li><a href="#" routerLink="/positions">Positions</a></li>
             </ul>
         </div>
-        <div class="dsh-table-container">
-            <table class="dsh-table">
+        <div [ngClass]="dsh-table-container">
+            <table [ngClass]="dsh-table">
                 <tr>
                   <th>Full Name</th>
                   <th>Department</th>

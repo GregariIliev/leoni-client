@@ -20,7 +20,7 @@ export class EmployeeService {
   }
   
   login(admin: any): Observable<any> {
-    return this.http.post<any>(`${this.API}/employees`, admin)
+    return this.http.post<any>(`${this.API}/employees/login`, admin)
       .pipe(
         map((response) => {
           localStorage.setItem('leoni', admin.email);

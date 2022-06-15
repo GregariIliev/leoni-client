@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private readonly departmentService: DepartmentService,
+    private readonly employeeService: EmployeeService,
     private readonly fb: FormBuilder
   ) { }
 

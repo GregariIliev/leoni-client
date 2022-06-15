@@ -38,4 +38,8 @@ export class EmployeeService {
         })
       );
   }
+
+  createEmplyee(employee: any){
+    return this.http.post<any>(`${this.API}/employees/register`, employee);
+  }
 }

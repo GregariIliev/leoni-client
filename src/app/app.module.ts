@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { LoginComponent } from './components/authentication/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
+import { SideNavbarComponent } from './components/dashboard/side-navbar/side-navbar.component';
+import { TableComponent } from './components/dashboard/table/table.component';
+import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { RegisterComponent } from './components/authentication/register/register
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
+    SideNavbarComponent,
+    TableComponent,
+    AdminPanelComponent,
   ],
   imports: [
     CommonModule,

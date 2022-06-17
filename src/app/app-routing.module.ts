@@ -30,3 +30,15 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+//function matcherFunction(url: UrlSegment[]) {
+//  console.log(url);
+//  if (url.length === 1 && url[0].path.endsWith('html')) {
+//    const path = url[0].path;
+//    if (path.startsWith('employees') || path.startsWith('dashboard/departments') || path.startsWith('dashboard/positions')) {
+//      return { consumed: url }
+//    }
+//  }
+//  return null;
+//}
+//

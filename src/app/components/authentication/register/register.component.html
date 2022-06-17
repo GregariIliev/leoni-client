@@ -12,21 +12,21 @@
             <div [ngClass]="'register-select'">
                 <label for="department">Department</label>
                 <select name="department" id="department" (change)="onChangeDepartment($event)"
-                    formControlName="department">
+                    formControlName="departments">
                     <option value="" disabled selected hidden>Select department</option>
                     <option [value]="department.id" *ngFor="let department of departments">{{department.name}}</option>
                 </select>
             </div>
             <div [ngClass]="'register-select'">
                 <label for="position">Positions</label>
-                <select name="position" id="position" (change)="onChangePosition($event)" formControlName="position">
+                <select name="position" id="position" (change)="onChangePosition($event)" formControlName="positions">
                     <option value="" disabled selected hidden>Select position</option>
                     <option [value]="position.id" *ngFor="let position of positions">{{position.name}}</option>
                 </select>
             </div>
             <div [ngClass]="'register-select'">
                 <label for="shift">Shift</label>
-                <select name="shift" id="shift" formControlName="shift">
+                <select name="shift" id="shift" formControlName="shifts">
                     <option value="" disabled selected hidden>Select shift</option>
                     <option [value]="shift" *ngFor="let shift of shifts">{{shift}}</option>
                 </select>

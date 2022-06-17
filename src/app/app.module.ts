@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/authentication/register/register
 import { SideNavbarComponent } from './components/dashboard/side-navbar/side-navbar.component';
 import { TableComponent } from './components/dashboard/table/table.component';
 import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
+import { StatisticsComponent } from './components/dashboard/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-pa
     SideNavbarComponent,
     TableComponent,
     AdminPanelComponent,
+    StatisticsComponent,
   ],
   imports: [
     CommonModule,

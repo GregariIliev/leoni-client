@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthorizationGuard } from './guards/authorization.guard';
 import { TableComponent } from './components/dashboard/table/table.component';
 import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
+import { StatisticsComponent } from './components/dashboard/statistics/statistics.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
     path: 'dashboard', component: DashboardComponent, canActivate: [AuthorizationGuard],
     canActivateChild: [AuthorizationGuard],
     children: [
+      { path: '', component: StatisticsComponent },
       { path: 'admin-panel', component: AdminPanelComponent },
       { path: 'employees', component: TableComponent },
       { path: 'departments', component: TableComponent },

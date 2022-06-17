@@ -10,9 +10,19 @@ import { TableComponent } from './components/dashboard/table/table.component';
 import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, pathMatch: 'full', title: 'Dashboard', canActivate: [AuthorizationGuard] },
-  { path: 'register', component: RegisterComponent, title: 'Register'},
-  { path: 'login', component: LoginComponent, title: 'Login' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  {
+    path: 'dashboard', component: DashboardComponent, canActivate: [AuthorizationGuard],
+    canActivateChild: [AuthorizationGuard],
+    children: [
+      { path: 'admin-panel', component: AdminPanelComponent },
+      { path: 'employees', component: TableComponent },
+      { path: 'departments', component: TableComponent },
+      { path: 'positions', component: TableComponent }
+    ]
+  },
+  { path: 'register', component: RegisterComponent, pathMatch: 'full', title: 'Register', canActivate: [AuthorizationGuard] },
+  { path: 'login', component: LoginComponent, pathMatch: 'full', title: 'Login' },
 ];
 
 @NgModule({

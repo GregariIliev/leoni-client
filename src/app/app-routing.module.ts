@@ -6,6 +6,8 @@ import { LoginComponent } from './components/authentication/login/login.componen
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthorizationGuard } from './guards/authorization.guard';
+import { TableComponent } from './components/dashboard/table/table.component';
+import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: 'full', title: 'Dashboard', canActivate: [AuthorizationGuard] },

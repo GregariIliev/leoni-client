@@ -19,12 +19,14 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent, canActivate: [AuthorizationGuard],
     canActivateChild: [AuthorizationGuard],
-    children: [
-      { path: '', component: StatisticsComponent },
-      { path: 'admin-panel', component: AdminPanelComponent },
-      { path: 'employees', component: TableComponent },
-      { path: 'departments', component: TableComponent },
-      { path: 'positions', component: TableComponent }
+    children: [{ path: '', component: StatisticsComponent, resolve: { stats: DataResolver } },
+    {
+      path: 'admin-panel', component: AdminPanelComponent,
+      children: [{ path: 'hire-employee', component: RegisterComponent }]
+    },
+    { path: 'employees', component: EmployeesTableComponent, resolve: { employees: DataResolver } },
+    { path: 'departments', component: DepartmentsTableComponent, resolve: { departments: DataResolver } },
+    { path: 'positions', component: PositionsTableComponent, resolve: { positions: DataResolver } }
     ]
   },
   { path: 'register', component: RegisterComponent, pathMatch: 'full', title: 'Register', canActivate: [AuthorizationGuard] },

@@ -11,7 +11,11 @@ export class DepartmentService {
 
   constructor(private readonly http: HttpClient) { }
 
-  getAllDepartments(): Observable<any> {
+  getAll(): Observable<any> {
     return this.http.get<any>(`${this.API}/departments`);
+  }
+
+  count(){
+    return this.http.get<any>(`${this.API}/departments/count`)
   }
 }

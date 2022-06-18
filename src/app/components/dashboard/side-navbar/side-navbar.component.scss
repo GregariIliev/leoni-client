@@ -36,6 +36,10 @@
             padding: 5px;
             margin-top: 10px;
         }
+
+        a:hover {
+            background-color: red;
+        }
     }
 
     .dsh-unorder-list {
@@ -61,6 +65,11 @@
             display: block;
             padding: 5px;
         }
+
+        a:hover {
+            background-color: red;
+        }
+    }
 
     button {
         border-radius: 5px;

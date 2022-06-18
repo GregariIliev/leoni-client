@@ -18,7 +18,7 @@ export class EmployeeService {
   get isLogged(): Observable<boolean> {
     return this.logged;
   }
-  
+
   login(admin: any): Observable<any> {
     return this.http.post<any>(`${this.API}/employees/login`, admin)
       .pipe(
@@ -39,7 +39,15 @@ export class EmployeeService {
       );
   }
 
-  createEmplyee(employee: any){
+  createEmplyee(employee: any) {
     return this.http.post<any>(`${this.API}/employees/register`, employee);
+  }
+
+  getAll() {
+    return this.http.get<any>(`${this.API}/employees`);
+  }
+
+  count(){
+    return this.http.get<any>(`${this.API}/employees/count`)
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-statistics',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics.component.scss']
 })
 export class StatisticsComponent implements OnInit {
+  employeeCount!: any;
+  departmentCount!: any;
+  positionsCount!: any;
 
-  constructor() { }
+  constructor(private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
+     this.route.data.subscribe(({ stats }) => {
+       this.employeeCount = stats.employeesCount;
+       this.departmentCount = stats.departmentsCount;
+       this.positionsCount = stats.positionsCount;
+     })
   }
 
 }

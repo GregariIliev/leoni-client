@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthorizationGuard } from './guards/authorization.guard';
+import { DataResolver } from './resolver/data.resolver';
+
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
-import { AuthorizationGuard } from './guards/authorization.guard';
-import { TableComponent } from './components/dashboard/table/table.component';
 import { EmployeesTableComponent } from './components/dashboard/table/employees/employees.table.component';
 import { DepartmentsTableComponent } from './components/dashboard/table/departments/departments-table.component';
 import { PositionsTableComponent } from './components/dashboard/table/positions/positions-table.component';

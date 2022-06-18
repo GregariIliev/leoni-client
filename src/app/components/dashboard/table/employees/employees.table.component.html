@@ -1,0 +1,29 @@
+<div [ngClass]="'dsh-table-container'">
+    <table [ngClass]="'dsh-table'">
+      <tr>
+        <th>Full Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Shift</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Salary</th>
+        <th>Appointment Date</th>
+        <th>Leave Date</th>
+      </tr>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.firstName + ' ' + employee.middleName + ' ' + employee.lastName}}</td>
+        <td>{{employee.Department.name}}</td>
+        <td>{{employee.Position.name}}</td>
+        <td>{{employee.shift}}</td>
+        <td>{{employee.address}}</td>
+        <td>{{employee.phone}}</td>
+        <td>{{employee.salary}}</td>
+        <td>{{employee.createdAt}}</td>
+        <td>{{employee.updatedAt}}</td>
+    </tr>
+    <tr *ngFor="let department of departments">
+      <td>{{department.name}}</td>
+    </tr>
+    </table>
+  </div>

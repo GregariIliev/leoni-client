@@ -10,7 +10,7 @@
         <input name="phone" type="text" placeholder="Phone" formControlName="phone">
         <div [ngClass]="'register-work-data'">
             <div [ngClass]="'register-select'">
-                <label for="department">Department</label>
+                <label for="department">Department</label><br>
                 <select name="department" id="department" (change)="onChangeDepartment($event)"
                     formControlName="departments">
                     <option value="" disabled selected hidden>Select department</option>
@@ -19,14 +19,14 @@
                 </select>
             </div>
             <div [ngClass]="'register-select'">
-                <label for="position">Positions</label>
+                <label for="position">Positions</label><br>
                 <select name="position" id="position" (change)="onChangePosition($event)" formControlName="positions">
                     <option value="" disabled selected hidden>Select position</option>
                     <option value="{{position.id}}" *ngFor="let position of positions">{{position.name}}</option>
                 </select>
             </div>
             <div [ngClass]="'register-select'">
-                <label for="shift">Shift</label>
+                <label for="shift">Shift</label><br>
                 <select name="shift" id="shift" formControlName="shifts">
                     <option value="" disabled selected hidden>Select shift</option>
                     <option value="{{shift.id}}" *ngFor="let shift of shifts">{{shift}}</option>

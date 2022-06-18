@@ -21,5 +21,17 @@ export class DataResolver implements Resolve<boolean> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+    if (state.url.endsWith('dashboard')) {
+      return forkJoin([
+        this.employeeService.count(),
+        this.deparmtentService.count(),
+        this.positionService.count()])
+        .pipe(map(data => {
+          return {
+            employeesCount: data[0],
+            departmentsCount: data[1],
+            positionsCount: data[2]
+          }
+        }))
   }
 }

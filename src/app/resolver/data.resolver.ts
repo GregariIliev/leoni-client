@@ -33,5 +33,9 @@ export class DataResolver implements Resolve<boolean> {
             positionsCount: data[2]
           }
         }))
+
+    } else if (state.url.endsWith('employees')) {
+      return this.employeeService.getAll();
+
   }
 }

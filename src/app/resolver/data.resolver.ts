@@ -37,5 +37,8 @@ export class DataResolver implements Resolve<boolean> {
     } else if (state.url.endsWith('employees')) {
       return this.employeeService.getAll();
 
+    } else if (state.url.endsWith('departments')) {
+      return this.deparmtentService.getAll();
+
   }
 }

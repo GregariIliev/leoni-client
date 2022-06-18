@@ -7,6 +7,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthorizationGuard } from './guards/authorization.guard';
 import { TableComponent } from './components/dashboard/table/table.component';
+import { EmployeesTableComponent } from './components/dashboard/table/employees/employees.table.component';
+import { DepartmentsTableComponent } from './components/dashboard/table/departments/departments-table.component';
+import { PositionsTableComponent } from './components/dashboard/table/positions/positions-table.component';
 import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
 import { StatisticsComponent } from './components/dashboard/statistics/statistics.component';
 

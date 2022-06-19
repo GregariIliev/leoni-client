@@ -13,6 +13,8 @@ import { DepartmentsTableComponent } from './components/dashboard/table/departme
 import { PositionsTableComponent } from './components/dashboard/table/positions/positions-table.component';
 import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
 import { StatisticsComponent } from './components/dashboard/statistics/statistics.component';
+import { DepartmentFormComponent } from './components/create/department-form/department-form.component';
+import { PositionFormComponent } from './components/create/position-form/position-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

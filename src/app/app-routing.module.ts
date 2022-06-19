@@ -23,8 +23,13 @@ const routes: Routes = [
     canActivateChild: [AuthorizationGuard],
     children: [{ path: '', component: StatisticsComponent, resolve: { stats: DataResolver } },
     {
-      path: 'admin-panel', component: AdminPanelComponent,
-      children: [{ path: 'hire-employee', component: RegisterComponent }]
+      path: 'admin-panel', component: AdminPanelComponent, canActivate: [AuthorizationGuard],
+      canActivateChild: [AuthorizationGuard],
+      children: [
+        { path: 'hire-employee', component: RegisterComponent, resolve: { departments: DataResolver } },
+        { path: 'create-department', component: DepartmentFormComponent },
+        { path: 'create-position', component: PositionFormComponent }
+      ]
     },
     {
       path: 'employees', component: EmployeesTableComponent, resolve: { employees: DataResolver },

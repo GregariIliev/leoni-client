@@ -20,6 +20,7 @@ export class PositionService {
   }
 
   count(){
-    return this.http.get<any>(`${this.API}/positions/count`)
+    return this.http.get<any>(`${this.API}/positions/count`);
+  }
   }
 }

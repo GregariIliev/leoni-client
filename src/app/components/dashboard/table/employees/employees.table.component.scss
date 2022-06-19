@@ -30,5 +30,10 @@
             border: none;
             border-collapse: collapse;
         }
+
+        .row:hover {
+            background-color: red;
+            cursor: pointer;
+        }
     }
 }

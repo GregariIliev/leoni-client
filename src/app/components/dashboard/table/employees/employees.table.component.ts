@@ -9,8 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmployeesTableComponent implements OnInit, OnChanges {
   employees!: any;
-  departments!: any;
-  positions!: any;
+ // titles!: any;
 
   constructor(private readonly route: ActivatedRoute) { }
   ngOnChanges(changes: SimpleChanges): void {
@@ -21,6 +20,13 @@ export class EmployeesTableComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.route.data.subscribe(({ employees }) => {
       this.employees = employees;
+
+      //this.titles = Object.keys(employees[0]);              set titles on table dinamicaly
     })
+  }
+
+  onClick(){
+    console.log('asd');
+    
   }
 }

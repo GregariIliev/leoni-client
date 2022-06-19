@@ -22,5 +22,8 @@ export class DepartmentService {
   count() {
     return this.http.get<any>(`${this.API}/departments/count`);
   }
+
+  create(department: any): Observable<any> {
+    return this.http.post<any>(`${this.API}/departments`, department);
   }
 }

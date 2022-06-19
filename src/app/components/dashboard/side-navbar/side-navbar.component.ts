@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-navbar',
@@ -9,8 +10,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class SideNavbarComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onLogout() {
+    localStorage.removeItem('leoni');
+    
+    this.router.navigateByUrl('login');
   }
 }

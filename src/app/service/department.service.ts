@@ -17,5 +17,8 @@ export class DepartmentService {
 
   count(){
     return this.http.get<any>(`${this.API}/departments/count`)
+  getAllDepartmentsPositions() {
+    return this.http.get<any>(`${this.API}/departments-positions`);
+  }
   }
 }

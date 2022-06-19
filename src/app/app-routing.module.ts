@@ -38,7 +38,6 @@ const routes: Routes = [
     }
     ]
   },
-  { path: 'register', component: RegisterComponent, pathMatch: 'full', title: 'Register', canActivate: [AuthorizationGuard] },
   { path: 'login', component: LoginComponent, pathMatch: 'full', title: 'Login' },
 ];
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
-import { DepartmentService } from 'src/app/service/department.service';
 import { EmployeeService } from 'src/app/service/employee.service';
 
 @Component({
@@ -15,55 +15,50 @@ export class RegisterComponent implements OnInit {
   public positions!: any;
   public shifts!: any;
 
+  err!: any;
   form!: FormGroup;
 
 
   constructor(
-    private readonly departmentService: DepartmentService,
+    private readonly route: ActivatedRoute,
     private readonly employeeService: EmployeeService,
     private readonly fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
-
     this.form = this.initForm();
 
-    try {
-      this.departmentService.getAllDepartments().subscribe((response: any) => {
-        this.departments = response;
-        this.form.patchValue(this.departments);
-      });
-
-    } catch (err) {
-      console.log(err);
-    }
+    this.route.data.subscribe(({ departments }) => {
+      this.departments = departments
+    })
   }
 
   onChangeDepartment(event: any) {
     const selectedId = Number(event.target.value);
-    const selectedDepartmentIndex = this.departments.findIndex((d: any) => d.id === selectedId);
 
-    this.positions = this.departments[selectedDepartmentIndex].Positions;
-    //this.form.patchValue(this.positions);  ///pathValue not updated the options
+    this.positions = this.departments.find((d: any) => d.id === selectedId).Positions;
 
     this.shifts = this.positions[0].shift.split(', ');
+    // this.form.patchValue({ positions: this.positions });
   }
 
 
   onChangePosition(event: any) {
     const selectedId = Number(event.target.value);
-    const selectedPositionIndex = this.positions.findIndex((p: any) => p.id === selectedId);
 
-    // this.form.patchValue(this.positions[selectedPositionIndex].shift.split(', ')); ///pathValue not updated the options
-    this.shifts = this.positions[selectedPositionIndex].shift.split(', ');
+    const sifts = this.positions.find((p: any) => p.id === selectedId).shift.split(', ');
+
+    this.shifts = sifts;
+    // this.form.patchValue({ shfts: this.shifts });
   }
 
   onSubmit() {
     try {
       const employee = this.form.value;
-      this.employeeService.createEmplyee(employee).subscribe((response) => {
-        console.log(response);
 
+      this.employeeService.createEmplyee(employee).subscribe((response) => {
+        //redirect when create employee
+        
       })
 
     } catch (err) {

@@ -24,9 +24,18 @@ const routes: Routes = [
       path: 'admin-panel', component: AdminPanelComponent,
       children: [{ path: 'hire-employee', component: RegisterComponent }]
     },
-    { path: 'employees', component: EmployeesTableComponent, resolve: { employees: DataResolver } },
-    { path: 'departments', component: DepartmentsTableComponent, resolve: { departments: DataResolver } },
-    { path: 'positions', component: PositionsTableComponent, resolve: { positions: DataResolver } }
+    {
+      path: 'employees', component: EmployeesTableComponent, resolve: { employees: DataResolver },
+      canActivate: [AuthorizationGuard],
+    },
+    {
+      path: 'departments', component: DepartmentsTableComponent, resolve: { departments: DataResolver },
+      canActivate: [AuthorizationGuard],
+    },
+    {
+      path: 'positions', component: PositionsTableComponent, resolve: { positions: DataResolver },
+      canActivate: [AuthorizationGuard],
+    }
     ]
   },
   { path: 'register', component: RegisterComponent, pathMatch: 'full', title: 'Register', canActivate: [AuthorizationGuard] },

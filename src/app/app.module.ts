@@ -18,6 +18,10 @@ import { StatisticsComponent } from './components/dashboard/statistics/statistic
 import { EmployeesTableComponent } from './components/dashboard/table/employees/employees.table.component';
 import { DepartmentsTableComponent } from './components/dashboard/table/departments/departments-table.component';
 import { PositionsTableComponent } from './components/dashboard/table/positions/positions-table.component';
+import { DepartmentFormComponent } from './components/create/department-form/department-form.component';
+import { PositionFormComponent } from './components/create/position-form/position-form.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,6 +35,8 @@ import { PositionsTableComponent } from './components/dashboard/table/positions/
     StatisticsComponent,
     PositionsTableComponent,
     DepartmentsTableComponent,
+    DepartmentFormComponent,
+    PositionFormComponent,
   ],
   imports: [
     CommonModule,

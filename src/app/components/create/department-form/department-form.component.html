@@ -1,0 +1,15 @@
+<div class="form-create-department-container">
+    <form method="POST" (submit)="onSubmit(form.value)" #form="ngForm" class="form-create-department">
+        <h1>Create new Department</h1>
+        <input type="text" name="name" id="name" placeholder="Name" ngModel required #name="ngModel">
+        <p class="error" [hidden]="name.valid || name.pristine">This field is required</p>
+        <input type="number" name="maxEmployees" id="maxEmployees" placeholder="Maximum Employees" ngModel required
+            #maxEmployees="ngModel">
+        <p class="error" [hidden]="maxEmployees.valid || maxEmployees.pristine">This field is required</p>
+        <input type="number" name="salaryMultiplayer" id="salaryMultiplayer" placeholder="Salary Multiplayer" ngModel
+            required #salaryMultiplayer="ngModel">
+        <p class="error" [hidden]="salaryMultiplayer.valid || salaryMultiplayer.pristine">This field is required</p>
+        <input type="submit" id="submit" [disabled]="name.invalid && maxEmployees.invalid && salaryMultiplayer.invalid">
+        <!-- <p class="error" *ngIf="err">{{err}}</p> -->
+    </form>
+</div>

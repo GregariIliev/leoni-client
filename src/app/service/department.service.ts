@@ -15,10 +15,12 @@ export class DepartmentService {
     return this.http.get<any>(`${this.API}/departments`);
   }
 
-  count(){
-    return this.http.get<any>(`${this.API}/departments/count`)
   getAllDepartmentsPositions() {
     return this.http.get<any>(`${this.API}/departments-positions`);
+  }
+
+  count() {
+    return this.http.get<any>(`${this.API}/departments/count`);
   }
   }
 }

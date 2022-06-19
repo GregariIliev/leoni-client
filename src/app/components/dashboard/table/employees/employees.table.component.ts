@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmployeesTableComponent implements OnInit, OnChanges {
   employees!: any;
- // titles!: any;
+  // titles!: any;
 
   constructor(private readonly route: ActivatedRoute) { }
   ngOnChanges(changes: SimpleChanges): void {
@@ -25,8 +25,7 @@ export class EmployeesTableComponent implements OnInit, OnChanges {
     })
   }
 
-  onClick(){
-    console.log('asd');
-    
+  onClick(employee: any) {
+    console.log(employee);
   }
 }

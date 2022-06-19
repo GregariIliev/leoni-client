@@ -22,5 +22,8 @@ export class PositionService {
   count(){
     return this.http.get<any>(`${this.API}/positions/count`);
   }
+
+  create(position: any){
+    return this.http.post<any>(`${this.API}/positions`, position);
   }
 }

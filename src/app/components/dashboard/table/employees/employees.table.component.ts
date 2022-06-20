@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 export class EmployeesTableComponent implements OnInit, OnChanges {
   employees!: any;
   // titles!: any;
+  hide = true;
+  left!: any;
+  top!: any;
 
   constructor(private readonly route: ActivatedRoute) { }
   ngOnChanges(changes: SimpleChanges): void {

@@ -19,8 +19,8 @@ import { PositionFormComponent } from './components/create/position-form/positio
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'dashboard', component: DashboardComponent, canActivate: [AuthorizationGuard],
-    canActivateChild: [AuthorizationGuard],
+    path: 'dashboard', component: DashboardComponent, canActivateChild: [AuthorizationGuard],
+    title: 'Dashboard',
     children: [{ path: '', component: StatisticsComponent, resolve: { stats: DataResolver } },
     {
       path: 'admin-panel', component: AdminPanelComponent, canActivate: [AuthorizationGuard],

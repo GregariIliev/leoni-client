@@ -24,23 +24,23 @@ const routes: Routes = [
     children: [{ path: '', component: StatisticsComponent, resolve: { stats: DataResolver } },
     {
       path: 'admin-panel', component: AdminPanelComponent, canActivate: [AuthorizationGuard],
-      canActivateChild: [AuthorizationGuard],
+      canActivateChild: [AuthorizationGuard], title: 'Admin Panel',
       children: [
-        { path: 'hire-employee', component: RegisterComponent, resolve: { departments: DataResolver } },
-        { path: 'create-department', component: DepartmentFormComponent },
-        { path: 'create-position', component: PositionFormComponent }
+        { path: 'hire-employee', component: RegisterComponent, resolve: { departments: DataResolver }, title: 'Hire Employee' },
+        { path: 'create-department', component: DepartmentFormComponent, title: 'Create Department' },
+        { path: 'create-position', component: PositionFormComponent, title: 'Create Position' }
       ]
     },
     {
-      path: 'employees', component: EmployeesTableComponent, resolve: { employees: DataResolver },
+      path: 'employees', component: EmployeesTableComponent, resolve: { employees: DataResolver }, title: 'Employees',
       canActivate: [AuthorizationGuard],
     },
     {
-      path: 'departments', component: DepartmentsTableComponent, resolve: { departments: DataResolver },
+      path: 'departments', component: DepartmentsTableComponent, resolve: { departments: DataResolver }, title: 'Departments',
       canActivate: [AuthorizationGuard],
     },
     {
-      path: 'positions', component: PositionsTableComponent, resolve: { positions: DataResolver },
+      path: 'positions', component: PositionsTableComponent, resolve: { positions: DataResolver }, title: 'Positions',
       canActivate: [AuthorizationGuard],
     }
     ]

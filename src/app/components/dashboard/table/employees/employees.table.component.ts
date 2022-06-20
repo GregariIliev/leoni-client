@@ -36,5 +36,8 @@ export class EmployeesTableComponent implements OnInit, OnChanges {
 
     this.hide = false
   }
+
+  mouseleave(event: any) {
+    this.hide = true
   }
 }

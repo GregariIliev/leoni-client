@@ -25,3 +25,10 @@
     </tr>
   </table>
   <div [hidden]="hide" class="del" [style.left.px]="left" [style.top.px]="top">
+  <div (mouseleave)="mouseleave($event)" [hidden]="hide" class="del" [style.left.px]="left" [style.top.px]="top">
+    <div class="button-container">
+      <button>Update</button>
+      <button>Delete</button>
+    </div>
+  </div>
+</div>

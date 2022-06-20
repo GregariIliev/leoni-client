@@ -9,9 +9,9 @@
     .dsh-table {
         width: 100%;
         text-align: center;
-        border-collapse: collapse;  
-        
-        
+        border-collapse: collapse;
+
+
         tr th {
             height: 50px;
             background-color: #0d3957;
@@ -37,6 +37,35 @@
 
         .row:hover {
             background-color: red;
+            cursor: pointer;
+        }
+
+    }
+}
+
+.del {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    min-width: 120px;
+    background-color: #0d3957;
+    border-radius: 5px;
+    border: 1px rgb(255, 255, 255) solid;
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        button {
+            background-color: white;
+            border: none;
+            color: black;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
             cursor: pointer;
         }
     }

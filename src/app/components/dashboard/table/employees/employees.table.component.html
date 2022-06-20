@@ -12,7 +12,7 @@
       <th>Leave Date</th>
       <!-- <th *ngFor="let title of titles">{{title}}</th> -->
     </tr>
-    <tr (click)="onClick(employee, $event)" *ngFor="let employee of employees" class="row">
+    <tr (click)="onClick(employee, $event)"  *ngFor="let employee of employees" class="row">
       <td>{{employee.firstName + ' ' + employee.middleName + ' ' + employee.lastName}}</td>
       <td>{{employee.Department.name}}</td>
       <td>{{employee.Position.name}}</td>

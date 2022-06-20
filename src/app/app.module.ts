@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,8 @@ import { DepartmentsTableComponent } from './components/dashboard/table/departme
 import { PositionsTableComponent } from './components/dashboard/table/positions/positions-table.component';
 import { DepartmentFormComponent } from './components/create/department-form/department-form.component';
 import { PositionFormComponent } from './components/create/position-form/position-form.component';
+
+import { AuthenticationInterceptor } from './interceptor/authentication.interceptor';
 
 
 
@@ -47,7 +49,9 @@ import { PositionFormComponent } from './components/create/position-form/positio
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

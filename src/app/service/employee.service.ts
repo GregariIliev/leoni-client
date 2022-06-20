@@ -20,7 +20,7 @@ export class EmployeeService {
   }
 
   login(admin: any): Observable<any> {
-    return this.http.post<any>(`${this.API}/employees/login`, admin)
+    return this.http.post<any>(`${this.API}/employees/login`, admin, { withCredentials: true })
       .pipe(
         map((response) => {
           localStorage.setItem('leoni', admin.email);
@@ -47,7 +47,7 @@ export class EmployeeService {
     return this.http.get<any>(`${this.API}/employees`);
   }
 
-  count(){
+  count() {
     return this.http.get<any>(`${this.API}/employees/count`)
   }
 }

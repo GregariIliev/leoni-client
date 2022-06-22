@@ -28,8 +28,8 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.initForm();
 
-    this.route.data.subscribe(({ departments }) => {
-      this.departments = departments
+    this.route.data.subscribe(({ allDepartments }) => {
+      this.departments = allDepartments
     })
   }
 

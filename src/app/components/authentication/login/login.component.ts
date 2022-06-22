@@ -13,8 +13,7 @@ import { EmployeeService } from 'src/app/service/employee.service';
 export class LoginComponent implements OnInit {
   constructor(private readonly employeeService: EmployeeService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   async onLogin(loginForm: NgForm) {
     try {

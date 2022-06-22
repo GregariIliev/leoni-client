@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { EmployeeService } from 'src/app/service/employee.service';
 
+import { Department } from 'src/app/interface/Department';
+
 @Component({
   selector: 'app-employee-from',
   templateUrl: './employee-from.component.html',

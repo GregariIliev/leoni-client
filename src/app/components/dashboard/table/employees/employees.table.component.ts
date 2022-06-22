@@ -29,7 +29,6 @@ export class EmployeesTableComponent implements OnInit, OnChanges {
   }
 
   onClick(employee: any, event: any) {
-    console.log(event);
 
     this.left = event.pageX;
     this.top = event.pageY;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { DepartmentService } from 'src/app/service/department.service';
 
 @Component({
@@ -11,7 +12,6 @@ export class DepartmentFormComponent implements OnInit {
   errorMessage = this.errorSubject.asObservable();
 
   form!: any;
- // err!: any;
 
   constructor(private readonly departmentService: DepartmentService) { }
 
@@ -20,16 +20,21 @@ export class DepartmentFormComponent implements OnInit {
 
   onSubmit(value: any) {
     this.departmentService.create(value).subscribe({
-      next: (response) => {
-        //redirect
-        return response
-      },
-      // error: (err) => {
-      //   this.err = err.error;
-      //   return err
-      // }
-    })
+      next: (v) => {
 
+      },
+      error: (e) => {
+        let error = e.error?.errors[0]?.message;
+
+        error = error.charAt(0).toUpperCase() + error.slice(1);
+
+        this.errorSubject.next(error);
+
+      },
+      complete: () => {
+        //redirect
+      }
+    });
   }
 
 }

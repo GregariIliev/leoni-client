@@ -4,5 +4,6 @@
         <input name="email" type="text" placeholder="Email" ngModel required>
         <input name="password" type="password" placeholder="Password" ngModel required>
         <input id="submit-login" type="submit" value="Login" [disabled]="loginForm.invalid">
+        <span class="error" *ngIf="errorMessage$ | async as error">{{error}}</span>
     </form>
 </div>

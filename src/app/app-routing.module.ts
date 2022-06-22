@@ -24,7 +24,7 @@ const routes: Routes = [
     path: 'dashboard', component: DashboardComponent, resolve: { valid: AuthentiacationResolver }, canActivateChild: [AuthorizationGuard],
     title: 'Dashboard',
     children: [
-      { path: '', component: StatisticsComponent },
+      { path: '', component: StatisticsComponent, resolve: { stats: DataResolver } },
       {
         path: 'admin-panel', component: AdminPanelComponent, resolve: { valid: AuthentiacationResolver }, canActivate: [AuthorizationGuard],
         canActivateChild: [AuthorizationGuard], title: 'Admin Panel',

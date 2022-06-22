@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, catchError, map, Observable } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,8 +10,6 @@ export class EmployeeService {
   private readonly API = environment.api;
 
   private logged = new BehaviorSubject<boolean>(false);
-  private error = ''
-
 
   constructor(private readonly http: HttpClient) { }
 
@@ -21,22 +19,6 @@ export class EmployeeService {
 
   login(admin: any): Observable<any> {
     return this.http.post<any>(`${this.API}/employees/login`, admin, { withCredentials: true })
-      .pipe(
-        map((response) => {
-          localStorage.setItem('leoni', admin.email);
-
-          //change logic to authrize employee without localStorage?
-
-          this.logged.next(true);
-
-          return response
-        }),
-        catchError((err) => {
-          localStorage.removeItem('leoni');
-
-          return err
-        })
-      );
   }
 
   createEmplyee(employee: any) {

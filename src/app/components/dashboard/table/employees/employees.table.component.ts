@@ -32,11 +32,11 @@ export class EmployeesTableComponent implements OnInit, OnChanges {
 
     this.left = event.pageX;
     this.top = event.pageY;
-
+    
     this.hide = false
   }
 
-  mouseleave(event: any) {
+  mouseleave() {
     this.hide = true
   }
 }

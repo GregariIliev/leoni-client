@@ -15,6 +15,7 @@ export class StatisticsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(({ stats }) => {
+      console.log(stats);
       this.employeeCount = stats[0];
       this.departmentCount = stats[1];
       this.positionsCount = stats[2];

@@ -5,12 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { EmployeeService } from 'src/app/service/employee.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  selector: 'app-employee-from',
+  templateUrl: './employee-from.component.html',
+  styleUrls: ['./employee-from.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterComponent implements OnInit {
+export class EmployeeFormComponent implements OnInit {
   public departments!: any;
   public positions!: any;
   public shifts!: any;
@@ -56,13 +56,11 @@ export class RegisterComponent implements OnInit {
     try {
       const employee = this.form.value;
 
-      this.employeeService.createEmplyee(employee).subscribe((response) => {
-        //redirect when create employee
-        
-      })
+      this.employeeService.createEmplyee(employee).subscribe();
 
     } catch (err) {
       console.log(err);
+      this.err = err;
     }
   }
 

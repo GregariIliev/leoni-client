@@ -14,11 +14,11 @@ export class StatisticsComponent implements OnInit {
   constructor(private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
-     this.route.data.subscribe(({ stats }) => {
-       this.employeeCount = stats.employeesCount;
-       this.departmentCount = stats.departmentsCount;
-       this.positionsCount = stats.positionsCount;
-     })
+    this.route.data.subscribe(({ stats }) => {
+      this.employeeCount = stats[0];
+      this.departmentCount = stats[1];
+      this.positionsCount = stats[2];
+    })
   }
 
 }

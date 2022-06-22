@@ -20,7 +20,7 @@ export class AuthentiacationResolver implements Resolve<boolean> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.authServiceService.checkAuthorization()
       .pipe(data => {
-        return data
+        return of(true);
       }, catchError(error => {
         localStorage.removeItem('leoni');
         this.router.navigateByUrl('/login');

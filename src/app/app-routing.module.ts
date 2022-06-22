@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthorizationGuard } from './guards/authorization.guard';
 
-import { DataResolver } from './interfaces/resolver/data.resolver';
-import { AuthentiacationResolver } from './interfaces/resolver/authentiacation.resolver';
+import { DataResolver } from './resolver/data.resolver';
+import { AuthentiacationResolver } from './resolver/authentiacation.resolver';
 
 import { LoginComponent } from './components/authentication/login/login.component';
 
@@ -23,28 +23,29 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent, resolve: { valid: AuthentiacationResolver, stats: DataResolver }, canActivateChild: [AuthorizationGuard],
     title: 'Dashboard',
-    children: [{ path: '', component: StatisticsComponent, resolve: { stats: DataResolver } },
-    {
-      path: 'admin-panel', component: AdminPanelComponent, canActivate: [AuthorizationGuard],
-      canActivateChild: [AuthorizationGuard], title: 'Admin Panel',
-      children: [
-        { path: 'hire-employee', component: RegisterComponent, resolve: { departments: DataResolver }, title: 'Hire Employee' },
-        { path: 'create-department', component: DepartmentFormComponent, title: 'Create Department' },
-        { path: 'create-position', component: PositionFormComponent, title: 'Create Position' }
-      ]
-    },
-    {
-      path: 'employees', component: EmployeesTableComponent, resolve: { employees: DataResolver }, title: 'Employees',
-      canActivate: [AuthorizationGuard],
-    },
-    {
-      path: 'departments', component: DepartmentsTableComponent, resolve: { departments: DataResolver }, title: 'Departments',
-      canActivate: [AuthorizationGuard],
-    },
-    {
-      path: 'positions', component: PositionsTableComponent, resolve: { positions: DataResolver }, title: 'Positions',
-      canActivate: [AuthorizationGuard],
-    }
+    children: [
+      { path: '', component: StatisticsComponent },
+      {
+        path: 'admin-panel', component: AdminPanelComponent, resolve: { valid: AuthentiacationResolver }, canActivate: [AuthorizationGuard],
+        canActivateChild: [AuthorizationGuard], title: 'Admin Panel',
+        children: [
+          { path: 'hire-employee', component: EmployeeFormComponent, resolve: { valid: AuthentiacationResolver, departments: DataResolver }, title: 'Hire Employee' },
+          { path: 'create-department', component: DepartmentFormComponent, resolve: { valid: AuthentiacationResolver }, title: 'Create Department' },
+          { path: 'create-position', component: PositionFormComponent, resolve: { valid: AuthentiacationResolver }, title: 'Create Position' }
+        ]
+      },
+      {
+        path: 'employees', component: EmployeesTableComponent, resolve: { valid: AuthentiacationResolver, employees: DataResolver }, title: 'Employees',
+        canActivate: [AuthorizationGuard],
+      },
+      {
+        path: 'departments', component: DepartmentsTableComponent, resolve: { valid: AuthentiacationResolver, departments: DataResolver }, title: 'Departments',
+        canActivate: [AuthorizationGuard],
+      },
+      {
+        path: 'positions', component: PositionsTableComponent, resolve: { valid: AuthentiacationResolver, positions: DataResolver }, title: 'Positions',
+        canActivate: [AuthorizationGuard],
+      }
     ]
   },
   { path: 'login', component: LoginComponent, pathMatch: 'full', title: 'Login' },

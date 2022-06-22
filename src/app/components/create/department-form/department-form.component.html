@@ -10,6 +10,6 @@
             required #salaryMultiplayer="ngModel">
         <p class="error" [hidden]="salaryMultiplayer.valid || salaryMultiplayer.pristine">This field is required</p>
         <input type="submit" id="submit" [disabled]="name.invalid && maxEmployees.invalid && salaryMultiplayer.invalid">
-        <!-- <p class="error" *ngIf="err">{{err}}</p> -->
+        <p class="error" *ngIf="errorMessage | async as error">{{error}}</p>
     </form>
 </div>

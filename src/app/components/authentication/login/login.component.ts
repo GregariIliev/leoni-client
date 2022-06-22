@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
 
       },
       error: (e) => {
-        this.errorSubject.next(e)
+        this.errorSubject.next(e.statusText);
+
       },
       complete: () => {
         this.router.navigateByUrl('/')

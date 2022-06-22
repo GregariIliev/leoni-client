@@ -20,22 +20,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   async onLogin(loginForm: NgForm) {
-    try {
-      const admin = loginForm.value;
+    const admin = loginForm.value;
 
-      if (!admin.email.trim() || !admin.password.trim()) {
-        // make more validations to avoid send invalid request
-        throw new Error('Invalid email or password')
+    this.employeeService.login(admin).subscribe({
+      next: (v) => {
+
+      },
+      error: (e) => {
+        this.errorSubject.next(e)
+      },
+      complete: () => {
+        this.router.navigateByUrl('/')
+        localStorage.setItem('leoni', admin.email)
       }
-
-
-      this.employeeService.login(admin).subscribe(async (response: any) => {
-        response ? this.router.navigate(['']) : this.router.navigate(['/login']);
-      })
-
-    } catch (err) {
-      console.log(err);
-      //// create error component
-    }
+    })
   }
 }

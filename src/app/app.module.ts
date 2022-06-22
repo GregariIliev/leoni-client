@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { LoginComponent } from './components/authentication/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { RegisterComponent } from './components/authentication/register/register.component';
+import { EmployeeFormComponent } from './components/create/employee-form/employee-from.component';
 import { SideNavbarComponent } from './components/dashboard/side-navbar/side-navbar.component';
 import { AdminPanelComponent } from './components/dashboard/admin-panel/admin-panel.component';
 import { StatisticsComponent } from './components/dashboard/statistics/statistics.component';
@@ -30,7 +30,7 @@ import { AuthenticationInterceptor } from './interceptor/authentication.intercep
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    RegisterComponent,
+    EmployeeFormComponent,
     SideNavbarComponent,
     EmployeesTableComponent,
     AdminPanelComponent,

@@ -25,14 +25,7 @@ export class DataResolver implements Resolve<boolean> {
       return forkJoin([
         this.employeeService.count(),
         this.deparmtentService.count(),
-        this.positionService.count()])
-        .pipe(map(data => {
-          return {
-            employeesCount: data[0],
-            departmentsCount: data[1],
-            positionsCount: data[2]
-          }
-        }))
+        this.positionService.count()]);
 
     } else if (state.url.endsWith('employees')) {
       return this.employeeService.getAll();

@@ -11,6 +11,6 @@
             <option value="{{shift}}" *ngFor="let shift of shifts">{{shift}}</option>
         </select>
         <input type="submit" id="submit" [disabled]="name.invalid && salaryMultiplayer.invalid">
-        <!-- <p class="error" *ngIf="err">{{err}}</p> -->
+        <p class="error" *ngIf="errorMessage | async as error">{{error}}</p>
     </form>
 </div>

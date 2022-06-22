@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 import { PositionService } from 'src/app/service/position.service';
 
@@ -8,6 +9,9 @@ import { PositionService } from 'src/app/service/position.service';
   styleUrls: ['./position-form.component.scss']
 })
 export class PositionFormComponent implements OnInit {
+  errorSubject = new BehaviorSubject<any>('');
+  errorMessage = this.errorSubject.asObservable();
+
   form!: any;
   shifts = ['A', 'B', 'C', 'R'];
 
@@ -17,8 +21,21 @@ export class PositionFormComponent implements OnInit {
   }
 
   onSubmit(position: any) {
-    
-    this.positionService.create(position).subscribe((response) => {
+
+    this.positionService.create(position).subscribe({
+      next: (v) => {
+
+      },
+      error: (e) => {
+        let error = e.error.errors[0].message;
+
+        error = error.charAt(0).toUpperCase() + error.slice(1);
+
+        this.errorSubject.next(error);
+      },
+      complete: () => {
+
+      }
     })
   }
 }

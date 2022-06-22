@@ -12,7 +12,7 @@ import { EmployeeService } from 'src/app/service/employee.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-  errorSubject = new BehaviorSubject<any>('');
+  errorSubject = new BehaviorSubject<string>('');
   errorMessage$ = this.errorSubject.asObservable();
 
   constructor(private readonly employeeService: EmployeeService, private router: Router) { }

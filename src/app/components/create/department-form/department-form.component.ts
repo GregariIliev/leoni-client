@@ -7,6 +7,9 @@ import { DepartmentService } from 'src/app/service/department.service';
   styleUrls: ['./department-form.component.scss']
 })
 export class DepartmentFormComponent implements OnInit {
+  errorSubject = new BehaviorSubject<any>('');
+  errorMessage = this.errorSubject.asObservable();
+
   form!: any;
  // err!: any;
 

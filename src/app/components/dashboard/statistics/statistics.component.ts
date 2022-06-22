@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./statistics.component.scss']
 })
 export class StatisticsComponent implements OnInit {
-  employeeCount!: any;
+  employeeCount!: number;
   departmentCount!: any;
   positionsCount!: any;
 
@@ -15,7 +15,6 @@ export class StatisticsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(({ stats }) => {
-      console.log(stats);
       this.employeeCount = stats[0];
       this.departmentCount = stats[1];
       this.positionsCount = stats[2];

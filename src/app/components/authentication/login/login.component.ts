@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
 
       },
       complete: () => {
-        this.router.navigateByUrl('/')
-        localStorage.setItem('leoni', admin.email)
+        this.router.navigateByUrl('/');
+        localStorage.setItem('leoni', admin.email);
       }
     })
   }

@@ -29,7 +29,7 @@ const routes: Routes = [
         path: 'admin-panel', component: AdminPanelComponent, resolve: { valid: AuthentiacationResolver }, canActivate: [AuthorizationGuard],
         canActivateChild: [AuthorizationGuard], title: 'Admin Panel',
         children: [
-          { path: 'hire-employee', component: EmployeeFormComponent, resolve: { valid: AuthentiacationResolver, departments: DataResolver }, title: 'Hire Employee' },
+          { path: 'hire-employee', component: EmployeeFormComponent, resolve: { valid: AuthentiacationResolver, allDepartments: DataResolver }, title: 'Hire Employee' },
           { path: 'create-department', component: DepartmentFormComponent, resolve: { valid: AuthentiacationResolver }, title: 'Create Department' },
           { path: 'create-position', component: PositionFormComponent, resolve: { valid: AuthentiacationResolver }, title: 'Create Position' }
         ]

@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   errorSubject = new BehaviorSubject<string>('');
   errorMessage$ = this.errorSubject.asObservable();
 
-  isLogged: boolean = false;
+  email!: string;
 
   constructor(private readonly authService: AuthService, private router: Router) { }
 

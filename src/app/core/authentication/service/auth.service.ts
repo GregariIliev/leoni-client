@@ -10,29 +10,11 @@ import { Employee } from 'src/app/interface/Employee';
   providedIn: 'root'
 })
 export class AuthService {
-  private logged = new BehaviorSubject<boolean>(false);
   private readonly API = environment.api;
 
   constructor(private readonly http: HttpClient) { }
 
-  log(admin: any) {
-    this.http.post<Employee>(`${this.API}/employees/login`, admin, { withCredentials: true })
-      .subscribe(v => {
-        console.log(v);
-
-        if (v) {
-          this.logged.next(true);
-        } else {
-          this.logged.next(false);
-        }
-      })
-  }
-
-  login() {
-    return this.logged
-  }
-
-  checkAuthorization() {
-    return this.http.get<any>(`${this.API}/authenticate`)
+  login(admin: any) {
+    return this.http.post<Employee>(`${this.API}/employees/login`, admin, { withCredentials: true });
   }
 }

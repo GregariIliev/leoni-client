@@ -12,6 +12,8 @@ import { AuthService } from './service/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
+  errorSubject = new BehaviorSubject<string>('');
+  errorMessage$ = this.errorSubject.asObservable();
 
 
 

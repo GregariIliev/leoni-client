@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   isLogged: boolean = false;
 
+  constructor(private readonly authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
 

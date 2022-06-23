@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 import { AuthService } from './service/auth.service';
 

@@ -1,0 +1,13 @@
+<div [ngClass]="'dsh-sidebar'">
+    <div [ngClass]="'dsh-avatar'">
+        <img src="/assets/profile.png" alt="Avatar" class="avatar">
+        <a routerLink="admin-panel" routerLinkActive="active" ariaCurrentWhenActive="page">Admin Panel</a>
+    </div>
+    <ul [ngClass]="'dsh-unorder-list'">
+        <li><a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a></li>
+        <li><a routerLink="employees" routerLinkActive="active" ariaCurrentWhenActive="page">Employees</a></li>
+        <li><a routerLink="departments" routerLinkActive="active" ariaCurrentWhenActive="page">Departments</a></li>
+        <li><a routerLink="positions" routerLinkActive="active" ariaCurrentWhenActive="page">Positions</a></li>
+    </ul>
+    <button (click)="onLogout()">Logout</button>
+</div>

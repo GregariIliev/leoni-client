@@ -26,8 +26,18 @@ export class LoginComponent implements OnInit {
   async onLogin(loginForm: NgForm) {
     const admin = loginForm.value;
 
-    this.authService.login().subscribe((v) => {
-      this.isLogged = v;
+    this.authService.login(admin).subscribe({
+      next: ({ email }) => {
+        this.email = email;
+        this.router.navigateByUrl('/dashboard');
+      },
+      error: (err) => {
+        this.errorSubject.next(err.error);
+
+      },
+      complete: () => {
+
+      }
     })
   }
 }

@@ -42,14 +42,17 @@ const routes: Routes = [
         path: 'employees', component: EmployeesTableComponent, resolve: { valid: AuthentiacationResolver, employees: DataResolver }, title: 'Employees',
         canActivate: [AuthorizationGuard],
       },
+      { path: 'employees/:id', component: EmployeeCardComponent, resolve: { valid: AuthentiacationResolver, employee: UpdateResolver } },
       {
         path: 'departments', component: DepartmentsTableComponent, resolve: { valid: AuthentiacationResolver, departments: DataResolver }, title: 'Departments',
         canActivate: [AuthorizationGuard],
       },
+      { path: 'departments/:id', component: DepartmentCardComponent },
       {
         path: 'positions', component: PositionsTableComponent, resolve: { valid: AuthentiacationResolver, positions: DataResolver }, title: 'Positions',
         canActivate: [AuthorizationGuard],
-      }
+      },
+      { path: 'positions/id', component: PositionCardComponent }
     ]
   },
   { path: 'login', component: LoginComponent, pathMatch: 'full', title: 'Login' },

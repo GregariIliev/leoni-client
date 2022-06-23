@@ -22,6 +22,9 @@ import { DepartmentFormComponent } from './components/create/department-form/dep
 import { PositionFormComponent } from './components/create/position-form/position-form.component';
 
 import { AuthenticationInterceptor } from './interceptor/authentication.interceptor';
+import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
+import { DepartmentCardComponent } from './components/department-card/department-card.component';
+import { PositionCardComponent } from './components/position-card/position-card.component';
 
 
 
@@ -39,6 +42,9 @@ import { AuthenticationInterceptor } from './interceptor/authentication.intercep
     DepartmentsTableComponent,
     DepartmentFormComponent,
     PositionFormComponent,
+    EmployeeCardComponent,
+    DepartmentCardComponent,
+    PositionCardComponent,
   ],
   imports: [
     CommonModule,

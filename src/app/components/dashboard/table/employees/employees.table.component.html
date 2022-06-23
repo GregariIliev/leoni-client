@@ -26,8 +26,8 @@
   </table>
   <div (mouseleave)="mouseleave()" [hidden]="hide" class="del" [style.left.px]="left" [style.top.px]="top">
     <div class="button-container">
-      <button>Update</button>
-      <button>Delete</button>
+      <a routerLink="{{id}}">Update</a>
+      <a>Delete</a>
     </div>
   </div>
 </div>

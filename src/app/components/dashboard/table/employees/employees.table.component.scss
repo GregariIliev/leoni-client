@@ -61,7 +61,7 @@
         height: 100%;
         width: 100%;
 
-        button {
+        a {
             background-color: white;
             border: none;
             color: black;
@@ -71,7 +71,7 @@
             cursor: pointer;
         }
 
-        button:hover {
+        a:hover {
             border: 1.4px solid red;
         }
     }

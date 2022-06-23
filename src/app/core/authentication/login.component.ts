@@ -20,8 +20,15 @@ export class LoginComponent implements OnInit {
   constructor(private readonly authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.isLogged);
 
   }
 
+  async onLogin(loginForm: NgForm) {
+    const admin = loginForm.value;
+
+    this.authService.login().subscribe((v) => {
+      this.isLogged = v;
+    })
   }
 }

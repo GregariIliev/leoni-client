@@ -15,7 +15,7 @@ export class AuthService {
 
   constructor(private readonly http: HttpClient) { }
 
-  login(admin: any) {
+  log(admin: any) {
     this.http.post<Employee>(`${this.API}/employees/login`, admin, { withCredentials: true })
       .subscribe(v => {
         console.log(v);
@@ -28,7 +28,7 @@ export class AuthService {
       })
   }
 
-  get() {
+  login() {
     return this.logged
   }
 

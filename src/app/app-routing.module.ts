@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthorizationGuard } from './guards/authorization.guard';
 
-import { DataResolver } from './resolver/data.resolver';
 import { AuthentiacationResolver } from './resolver/authentiacation.resolver';
+import { UpdateResolver } from './resolver/update.resolver';
+import { DataResolver } from './resolver/data.resolver';
 
 import { LoginComponent } from './components/authentication/login/login.component';
 

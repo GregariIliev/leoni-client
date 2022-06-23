@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   errorSubject = new BehaviorSubject<string>('');
   errorMessage$ = this.errorSubject.asObservable();
 
+  isLogged: boolean = false;
 
 
   ngOnInit(): void {

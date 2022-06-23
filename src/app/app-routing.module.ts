@@ -18,6 +18,9 @@ import { PositionsTableComponent } from './components/dashboard/table/positions/
 import { EmployeeFormComponent } from './components/create/employee-form/employee-from.component';
 import { DepartmentFormComponent } from './components/create/department-form/department-form.component';
 import { PositionFormComponent } from './components/create/position-form/position-form.component';
+import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
+import { DepartmentCardComponent } from './components/department-card/department-card.component';
+import { PositionCardComponent } from './components/position-card/position-card.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

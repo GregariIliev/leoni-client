@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TableRoutingModule } from './table-routing.module';
 import { TableComponent } from './table.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { TableComponent } from './table.component';
   ],
   imports: [
     CommonModule,
-    TableRoutingModule
+    TableRoutingModule,
+    MatTableModule,
+    SharedModule
   ]
 })
 export class TableModule { }

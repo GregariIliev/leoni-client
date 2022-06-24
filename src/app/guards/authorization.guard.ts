@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of, catchError } from 'rxjs';
 import { Router } from '@angular/router';
+
+import { AuthService } from '../core/authentication/service/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorizationGuard implements CanActivate, CanActivateChild {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private readonly authService: AuthService) { }
+
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     if (localStorage.getItem('leoni')) {
       return true

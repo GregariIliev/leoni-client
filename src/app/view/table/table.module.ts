@@ -5,6 +5,7 @@ import { TableRoutingModule } from './table-routing.module';
 import { TableComponent } from './table.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [

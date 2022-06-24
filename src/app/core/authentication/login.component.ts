@@ -15,8 +15,6 @@ export class LoginComponent implements OnInit {
   errorSubject = new BehaviorSubject<string>('');
   errorMessage$ = this.errorSubject.asObservable();
 
-  email!: string;
-
   constructor(private readonly authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -28,7 +26,6 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(admin).subscribe({
       next: ({ email }) => {
-        this.email = email;
         this.router.navigateByUrl('/dashboard');
       },
       error: (err) => {

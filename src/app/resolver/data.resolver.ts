@@ -6,9 +6,9 @@ import {
 } from '@angular/router';
 import { forkJoin, Observable, of } from 'rxjs';
 
-import { DepartmentService } from '../service/department.service';
-import { EmployeeService } from '../service/employee.service';
-import { PositionService } from '../service/position.service';
+import { EmployeeService } from '../shared/service/employee.service';
+import { DepartmentService } from '../shared/service/department.service';
+import { PositionService } from '../shared/service/position.service';
 
 @Injectable({
   providedIn: 'root'

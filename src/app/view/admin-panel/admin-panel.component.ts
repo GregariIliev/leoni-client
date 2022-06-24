@@ -1,10 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-admin-panel',
   templateUrl: './admin-panel.component.html',
-  styleUrls: ['./admin-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./admin-panel.component.scss']
 })
 export class AdminPanelComponent implements OnInit {
 

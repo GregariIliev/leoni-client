@@ -32,4 +32,8 @@ export class EmployeeService {
   count() {
     return this.http.get<any>(`${this.API}/employees/count`)
   }
+
+  getById(id: number) {
+    return this.http.get<any>(`${this.API}/employees/${id}`);
+  }
 }

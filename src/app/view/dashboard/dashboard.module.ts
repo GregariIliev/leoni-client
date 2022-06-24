@@ -4,14 +4,11 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { SideNavbarComponent } from '../../shared/components/side-navbar/side-navbar.component';
-
 
 @NgModule({
   declarations: [
     DashboardComponent,
     StatisticsComponent,
-    SideNavbarComponent
   ],
   imports: [
     CommonModule,

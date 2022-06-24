@@ -7,12 +7,10 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { EmployeeService } from '../service/employee.service';
-
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor() { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     request = request.clone({withCredentials: true});

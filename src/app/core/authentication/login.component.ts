@@ -26,14 +26,16 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(admin).subscribe({
       next: ({ email }) => {
+        localStorage.setItem('leoni', email);
         this.router.navigateByUrl('/dashboard');
       },
       error: (err) => {
+        localStorage.removeItem('leoni');
         this.errorSubject.next(err.error);
 
       },
       complete: () => {
-
+        
       }
     })
   }

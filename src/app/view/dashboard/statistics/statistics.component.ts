@@ -20,5 +20,4 @@ export class StatisticsComponent implements OnInit {
       this.positionsCount = stats[2];
     })
   }
-
 }

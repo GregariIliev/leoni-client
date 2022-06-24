@@ -17,4 +17,8 @@ export class AuthService {
   login(admin: any) {
     return this.http.post<Employee>(`${this.API}/employees/login`, admin, { withCredentials: true });
   }
+
+  isAuth(){
+    return this.http.get<boolean>(`${this.API}/authenticate`);
+  }
 }

@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TableRoutingModule } from './table-routing.module';
 import { TableComponent } from './table.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-
 import { MatTableModule } from '@angular/material/table';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,4 +17,6 @@ import { MatTableModule } from '@angular/material/table';
     SharedModule
   ]
 })
-export class TableModule { }
+export class TableModule {
+  constructor() { }
+}

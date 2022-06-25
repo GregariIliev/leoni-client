@@ -2,30 +2,8 @@
     <div class="admin-panel">
         <app-side-navbar></app-side-navbar>
         <div class="control">
-            <div class="navbar">
-                <div class="dropdown">
-                    <button class="dropbtn">Employees</button>
-                    <div class="dropdown-content">
-                        <a routerLink="hire-employee">Hire new Employee</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Departments
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a routerLink="create-department">Create new Deparmtnet</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Positions
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a routerLink="create-position">Create new Position</a>
-                    </div>
-                </div>
-            </div>
+            <app-admin-navbar></app-admin-navbar>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

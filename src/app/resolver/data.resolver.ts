@@ -5,7 +5,6 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { forkJoin, Observable, of } from 'rxjs';
-
 import { EmployeeService } from '../shared/services/employee.service';
 import { DepartmentService } from '../shared/services/department.service';
 import { PositionService } from '../shared/services/position.service';

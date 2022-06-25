@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     this.authService.login(admin).subscribe({
       next: ({ email }) => {
         localStorage.setItem('leoni', email);
-        this.router.navigateByUrl('/dashboard');
       },
       error: (err) => {
         localStorage.removeItem('leoni');
@@ -35,7 +34,7 @@ export class LoginComponent implements OnInit {
 
       },
       complete: () => {
-        
+        this.router.navigateByUrl('/dashboard');
       }
     })
   }

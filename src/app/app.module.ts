@@ -29,5 +29,3 @@ import { LoginComponent } from './core/authentication/login.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-//ng generate module dashboard --route dashboard --module app.module

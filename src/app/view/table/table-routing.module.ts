@@ -4,8 +4,10 @@ import { TableComponent } from './table.component';
 
 import { DataResolver } from 'src/app/resolver/data.resolver';
 
+import { AuthorizationGuard } from 'src/app/guards/authorization.guard';
+
 const routes: Routes = [
-  { path: '', component: TableComponent, resolve: { table: DataResolver } }
+  { path: '', component: TableComponent, canActivate: [AuthorizationGuard], resolve: { table: DataResolver } }
 ];
 
 @NgModule({

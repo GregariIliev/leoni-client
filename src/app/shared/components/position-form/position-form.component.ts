@@ -19,7 +19,8 @@ export class PositionFormComponent implements OnInit {
   errorMessage = this.errorSubject.asObservable();
 
   form!: any;
-  shifts!: string[]
+  shifts: string[] = ['A', 'B', 'C', 'R'];
+
   constructor(private readonly positionService: PositionService, private readonly fb: FormBuilder) { }
 
   ngOnInit(): void {

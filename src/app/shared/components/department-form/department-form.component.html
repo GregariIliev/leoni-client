@@ -21,7 +21,7 @@
                         <input type="number" matInput formControlName="maxEmployees" placeholder="Type number">
                         <mat-error
                             *ngIf="form.get('maxEmployees').errors && !form.get('maxEmployees').hasError('required')">
-                            Please enter a valid number of employees. The maximum is 20
+                            Please enter a valid number of employees. The minimum is 5. The and Maximum is 20.
                         </mat-error>
                         <mat-error *ngIf="form.get('maxEmployees').hasError('required')">
                             This field is <strong>required</strong>
@@ -32,7 +32,7 @@
                         <input type="number" matInput formControlName="salaryMultiplayer" placeholder="Type number">
                         <mat-error
                             *ngIf="form.get('salaryMultiplayer').errors && !form.get('salaryMultiplayer').hasError('required')">
-                            Please enter a valid multiplayer. The maximum is 2.0
+                            Please enter a valid multiplayer. The minimum is 1.0. The maximum is 2.0.
                         </mat-error>
                         <mat-error *ngIf="form.get('salaryMultiplayer').hasError('required')">
                             This field is <strong>required</strong>
@@ -41,7 +41,7 @@
                 </div>
                 <input type="submit" id="submit"
                     [disabled]="form.get('maxEmployees').invalid && form.get('maxEmployees').invalid && form.get('salaryMultiplayer').invalid">
-                <p class="error" *ngIf="errorMessage | async as error">{{error | titlecase}}</p>
+                <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
             </form>
         </div>
     </div>

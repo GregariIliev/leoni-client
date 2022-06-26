@@ -57,3 +57,10 @@
         border-radius: 5px;
     }
 }
+
+mat-form-field.mat-form-field {
+    font-size: 12px;
+    margin: 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+}

@@ -76,7 +76,6 @@
                     <div [ngClass]="'register-select'">
                         <mat-form-field appearance="fill">
                             <mat-label>Position</mat-label>
-                            <mat-select formControlName="position_id" name="position">
                             <mat-select formControlName="position_id" (selectionChange)="onChangePosition($event)" name="position">
                                 <mat-option *ngFor="let position of positions" [value]="position.id">
                                     {{position.name}}
@@ -96,7 +95,7 @@
                     </div>
                 </div>
                 <input id="register-button" type="submit" value="Register" [disabled]="form.invalid" >
-                <p>{{err}}</p>
+                <mat-error class="error" *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
             </form>
         </div>
     </div>

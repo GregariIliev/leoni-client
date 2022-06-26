@@ -6,6 +6,10 @@ import { AuthorizationGuard } from 'src/app/guards/authorization.guard';
 
 import { AdminPanelComponent } from './admin-panel.component';
 
+import { EmployeeFormComponent } from 'src/app/shared/components/employee-form/employee-from.component';
+import { DepartmentFormComponent } from 'src/app/shared/components/department-form/department-form.component';
+import { PositionFormComponent } from 'src/app/shared/components/position-form/position-form.component';
+
 const routes: Routes = [
   { path: '', component: AdminPanelComponent },
   { path: 'employee-table', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },

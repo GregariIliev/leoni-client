@@ -1,3 +1,6 @@
+import { Department } from "./Department";
+import { Position } from "./Position";
+
 export interface Employee {
     id: number,
     firstName: string,

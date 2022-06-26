@@ -25,13 +25,12 @@ export class PositionFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.initForm();
-    this.shifts = this.form.get('shift').value
   }
 
-  onSubmit(position: any) {
+  onSubmit(position: Position) {
     this.positionService.create(position).subscribe({
-      next: (v) => {
-        //vanigate to position or table
+      next: (position: Position) => {
+        
       },
       error: (e) => {
         let error = e.error.errors[0].message;

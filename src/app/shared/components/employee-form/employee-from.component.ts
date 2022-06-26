@@ -54,7 +54,6 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   onSubmit() {
-    try {
       const employee: Employee = this.form.value;
 
       this.employeeService.createEmplyee(employee).subscribe({
@@ -68,11 +67,6 @@ export class EmployeeFormComponent implements OnInit {
 
         }
       })
-
-    } catch (err) {
-      console.log(err);
-      this.err = err;
-    }
   }
 
   initForm(): FormGroup {

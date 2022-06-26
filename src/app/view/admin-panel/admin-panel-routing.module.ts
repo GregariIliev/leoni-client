@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { DataResolver } from 'src/app/resolver/data.resolver';
+import { AuthorizationGuard } from 'src/app/guards/authorization.guard';
+
 import { AdminPanelComponent } from './admin-panel.component';
 
 const routes: Routes = [

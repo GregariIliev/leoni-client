@@ -1,0 +1,93 @@
+:host {
+    width: 100%;
+}
+
+.register-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.register {
+    height: 80%;
+    width: 100%;
+    background-color: #ffffffb0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.register-name-data {
+    display: flex;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register-form {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.register-work-data {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+}
+
+.register-select {
+    text-align: center;
+    padding: 5px;
+
+    select {
+        width: 150px;
+        padding: 5px;
+    }
+}
+
+#register-button {
+    cursor: pointer;
+    background-color: #0d3957bf;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+}
+
+.err {
+    border-color: red;
+}
+
+.example-form {
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+mat-form-field.mat-form-field {
+    font-size: 12px;
+    margin: 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.adress-phone {
+    width: 30%;
+    display: flex;
+}

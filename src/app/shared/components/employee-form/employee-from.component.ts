@@ -1,10 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { ActivatedRoute } from '@angular/router';
 
-import { EmployeeService } from 'src/app/service/employee.service';
+import { EmployeeService } from '../../services/employee.service';
 
-import { Department } from 'src/app/interface/Department';
+import { Employee } from 'src/app/interface/Employee';
 
 @Component({
   selector: 'app-employee-from',
@@ -36,9 +37,7 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   onChangeDepartment(event: any) {
-    const selectedId = Number(event.target.value);
-
-    this.positions = this.departments.find((d: any) => d.id === selectedId).Positions;
+    this.positions = this.departments.find((d: any) => d.id === this.departmentId?.value).Positions;
 
     this.shifts = this.positions[0].shift.split(', ');
     // this.form.patchValue({ positions: this.positions });
@@ -46,9 +45,7 @@ export class EmployeeFormComponent implements OnInit {
 
 
   onChangePosition(event: any) {
-    const selectedId = Number(event.target.value);
-
-    const sifts = this.positions.find((p: any) => p.id === selectedId).shift.split(', ');
+    const sifts = this.positions.find((p: any) => p.id === this.positionId?.value).shift.split(', ');
 
     this.shifts = sifts;
     // this.form.patchValue({ shfts: this.shifts });
@@ -56,9 +53,19 @@ export class EmployeeFormComponent implements OnInit {
 
   onSubmit() {
     try {
-      const employee = this.form.value;
+      const employee: Employee = this.form.value;
 
-      this.employeeService.createEmplyee(employee).subscribe();
+      this.employeeService.createEmplyee(employee).subscribe({
+        next: (employee: Employee) => {
+          if (employee) {
+            ///navigate to employee
+          }
+        },
+        error: (error) => {
+          console.log(error);
+
+        }
+      })
 
     } catch (err) {
       console.log(err);
@@ -68,7 +75,7 @@ export class EmployeeFormComponent implements OnInit {
 
   initForm(): FormGroup {
     return this.fb.group({
-      firstName: ['', [Validators.required]],
+      firstName: ['', [Validators.required, Validators.min(4)]],
       middleName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       address: ['', [Validators.required]],
@@ -79,4 +86,6 @@ export class EmployeeFormComponent implements OnInit {
     })
   }
 
+  get departmentId() { return this.form.get('department_id') }
+  get positionId() { return this.form.get('position_id') }
 }

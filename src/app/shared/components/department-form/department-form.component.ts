@@ -1,8 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
+
+import { ActivatedRoute } from '@angular/router';
 
 import { DepartmentService } from '../../services/department.service';
+
+import { Department } from 'src/app/interface/Department';
+import { Position } from 'src/app/interface/Position';
 
 @Component({
   selector: 'app-department-form',

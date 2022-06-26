@@ -47,6 +47,8 @@ export class DataResolver implements Resolve<boolean> {
     } else if (state.url.endsWith('position-table')) {
       return this.positionService.getAll();
 
+    } else if (state.url.endsWith('create-department')){
+      return this.positionService.getAll();
     }
     return of(false);
   }

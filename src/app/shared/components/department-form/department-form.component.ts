@@ -20,6 +20,11 @@ export class DepartmentFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.initForm();
+    this.activatedRoute.data.subscribe({
+      next: ({allPositions}: any) => {
+        this.positions = allPositions
+      }
+    })
   }
 
   onSubmit(value: any) {

@@ -20,8 +20,13 @@ export class DepartmentFormComponent implements OnInit {
   errorMessage = this.errorSubject.asObservable();
 
   form!: any;
+  positions!: Position[];
 
-  constructor(private readonly departmentService: DepartmentService, private readonly fb: FormBuilder) { }
+  constructor(
+    private readonly departmentService: DepartmentService,
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.form = this.initForm();

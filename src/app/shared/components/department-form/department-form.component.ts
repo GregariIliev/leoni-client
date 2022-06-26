@@ -24,7 +24,7 @@ export class DepartmentFormComponent implements OnInit {
 
   onSubmit(value: any) {
     this.departmentService.create(value).subscribe({
-      next: (v) => {
+      next: (department: Department) => {
 
       },
       error: (e) => {

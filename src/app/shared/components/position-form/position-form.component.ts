@@ -45,7 +45,7 @@ export class PositionFormComponent implements OnInit {
     return this.fb.group({
       name: ['', [Validators.required]],
       salaryMultiplayer: ['', [Validators.required, Validators.min(1), Validators.max(2)]],
-      shift: [['A', 'B', 'C', 'R'], [Validators.required]],
+      shift: ['', [Validators.required]],
     })
   }
 

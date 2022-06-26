@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <input id="register-button" type="submit" value="Register" [disabled]="form.invalid" >
-                <mat-error class="error" *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
+                <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
             </form>
         </div>
     </div>

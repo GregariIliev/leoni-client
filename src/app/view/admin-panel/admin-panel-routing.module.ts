@@ -13,6 +13,7 @@ import { PositionFormComponent } from 'src/app/shared/components/position-form/p
 const routes: Routes = [
   { path: '', component: AdminPanelComponent },
   { path: 'hire-employee', component: EmployeeFormComponent, canActivate: [AuthorizationGuard], resolve: { allDepartments: DataResolver } },
+  { path: 'create-department', component: DepartmentFormComponent, canActivate: [AuthorizationGuard], resolve: { allPositions: DataResolver } },
   { path: 'employee-table', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
   { path: 'department-table', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
   { path: 'position-table', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },

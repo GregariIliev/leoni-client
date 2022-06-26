@@ -39,6 +39,15 @@
                         </mat-error>
                     </mat-form-field>
                 </div>
+                <div class="division-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Positions</mat-label>
+                        <mat-select formControlName="positions" multiple>
+                            <mat-option *ngFor="let position of positions" [value]="position.id">{{position?.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
                 <input type="submit" id="submit"
                     [disabled]="form.get('maxEmployees').invalid && form.get('maxEmployees').invalid && form.get('salaryMultiplayer').invalid">
                 <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>

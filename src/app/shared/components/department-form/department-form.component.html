@@ -5,17 +5,17 @@
             <app-admin-navbar></app-admin-navbar>
             <form method="POST" (submit)="onSubmit(form.value)" [formGroup]="form" class="form">
                 <h1>Create new Department</h1>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Name</mat-label>
-                    <input type="text" matInput formControlName="name" placeholder="Example">
-                    <mat-error *ngIf="form.get('name').errors && !form.get('name').hasError('required')">
-                        Please enter a valid name
-                    </mat-error>
-                    <mat-error *ngIf="form.get('name').hasError('required')">
-                        Name is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <div class="division-container">
+                <div class="name-positions">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput formControlName="name" placeholder="Example">
+                        <mat-error *ngIf="form.get('name').errors && !form.get('name').hasError('required')">
+                            Please enter a valid name
+                        </mat-error>
+                        <mat-error *ngIf="form.get('name').hasError('required')">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                     <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>Maximum Employees</mat-label>
                         <input type="number" matInput formControlName="maxEmployees" placeholder="Type number">

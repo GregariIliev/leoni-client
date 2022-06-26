@@ -1,11 +1,14 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router';
 
 import { EmployeeService } from '../../services/employee.service';
 
 import { Employee } from 'src/app/interface/Employee';
+import { Department } from 'src/app/interface/Department';
+import { Position } from 'src/app/interface/Position';
 
 @Component({
   selector: 'app-employee-from',

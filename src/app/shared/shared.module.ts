@@ -23,11 +23,15 @@ import { MatSelectModule } from '@angular/material/select';
     ],
     declarations: [
         SideNavbarComponent,
+        AdminNavbarComponent,
         EmployeeFormComponent,
         DepartmentFormComponent,
         PositionFormComponent
     ],
     exports: [
+        CommonModule,
+        SideNavbarComponent,
+        AdminNavbarComponent,
         EmployeeFormComponent,
         DepartmentFormComponent,
         PositionFormComponent

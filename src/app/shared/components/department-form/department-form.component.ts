@@ -40,9 +40,9 @@ export class DepartmentFormComponent implements OnInit {
   initForm(): FormGroup {
     return this.fb.group({
       name: ['', [Validators.required]],
-      maxEmployees: ['', Validators.required, Validators.min(5), Validators.max(20)],
-      salaryMultiplayer: ['', [Validators.required, Validators.min(1), Validators.max(2)]]
+      maxEmployees: ['', [Validators.required, Validators.min(5), Validators.max(20)]],
+      salaryMultiplayer: ['', [Validators.required, Validators.min(1), Validators.max(2)]],
+      positions: [[''], Validators.required]
     })
   }
-
 }

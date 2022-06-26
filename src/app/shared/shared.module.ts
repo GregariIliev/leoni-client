@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
@@ -13,6 +13,8 @@ import { MatSelectModule } from '@angular/material/select';
     imports: [
         CommonModule,
         RouterModule,
+        ReactiveFormsModule,
+        FormsModule,
         MatInputModule,
         MatSelectModule
     ],

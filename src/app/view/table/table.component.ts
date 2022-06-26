@@ -18,7 +18,12 @@ export class TableComponent implements OnInit {
       next: ({ table }) => {
         if (table.length > 0) {
           this.displayedColumns = Object.keys(table[0]);
+
           this.data = table
+
+          for (const t of table) {
+            t.Positions = t.Positions.map((p: any) => p.name);
+          }
         }
       }
     })

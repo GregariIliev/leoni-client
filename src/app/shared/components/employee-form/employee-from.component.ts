@@ -58,12 +58,13 @@ export class EmployeeFormComponent implements OnInit {
 
       this.employeeService.createEmplyee(employee).subscribe({
         next: (employee: Employee) => {
-          if (employee) {
-            ///navigate to employee
-          }
+          
         },
-        error: (error) => {
-          console.log(error);
+        error: (e) => {
+          let error = e.error.errors[0].message;
+          this.errorSubject.next(error);
+        },
+        complete: () => {
 
         }
       })

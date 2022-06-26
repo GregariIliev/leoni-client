@@ -45,8 +45,7 @@ export class EmployeeFormComponent implements OnInit {
   onChangeDepartment(event: any) {
     this.positions = this.departments.find((d: Department) => d.id === event.value).Positions;
 
-    this.shifts = this.positions[0].shift.split(', ');
-    // this.form.patchValue({ positions: this.positions });
+    this.shifts = [];
   }
 
 

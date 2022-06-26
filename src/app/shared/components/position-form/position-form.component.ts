@@ -1,8 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
+
+import { ActivatedRoute } from '@angular/router';
 
 import { PositionService } from '../../services/position.service';
+
+import { Position } from 'src/app/interface/Position';
 
 @Component({
   selector: 'app-position-form',

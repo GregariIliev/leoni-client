@@ -50,10 +50,7 @@ export class EmployeeFormComponent implements OnInit {
 
 
   onChangePosition(event: any) {
-    const sifts = this.positions.find((p: any) => p.id === this.positionId?.value).shift.split(', ');
-
-    this.shifts = sifts;
-    // this.form.patchValue({ shfts: this.shifts });
+    this.shifts = this.positions.find((p: any) => p.id === event.value).shift.split(', ');
   }
 
   onSubmit() {

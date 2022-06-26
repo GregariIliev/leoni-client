@@ -20,7 +20,7 @@
                     <input type="number" matInput formControlName="salaryMultiplayer" placeholder="Type number">
                     <mat-error
                         *ngIf="form.get('salaryMultiplayer') && !form.get('salaryMultiplayer').hasError('required')">
-                        Please enter a valid multiplayer. The maximum is 2.0
+                        Please enter a valid multiplayer. The minimum is 1.0. The maximum is 2.0
                     </mat-error>
                     <mat-error *ngIf="form.get('salaryMultiplayer').hasError('required')">
                         This field is <strong>required</strong>
@@ -36,7 +36,7 @@
                 </mat-form-field>
                 <input type="submit" id="submit"
                     [disabled]="form.get('name').invalid && form.get('salaryMultiplayer').invalid">
-                <p class="error" *ngIf="errorMessage | async as error">{{error | titlecase}}</p>
+                <mat-error class="error" *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
             </form>
         </div>
     </div>

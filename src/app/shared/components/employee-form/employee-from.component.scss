@@ -1,35 +1,6 @@
 :host {
     width: 100%;
-}
-
-.register-container {
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.register {
-    height: 80%;
-    width: 100%;
-    background-color: #ffffffb0;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.register-name-data {
-    display: flex;
-}
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
 }
 
 .form {
@@ -40,6 +11,10 @@
     align-items: center;
     justify-content: center;
     align-content: center;
+}
+
+.register-name-data {
+    display: flex;
 }
 
 .register-work-data {
@@ -62,12 +37,35 @@ input {
     }
 }
 
+.buttons-container {
+    display: flex;
+}
+
+.buttons {
+    cursor: pointer;
+    background-color: #0d3957bf;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+    margin: 5px;
+}
+
 #register-button {
     cursor: pointer;
     background-color: #0d3957bf;
     border-radius: 5px;
     color: white;
     padding: 8px;
+    margin: 5px;
+}
+
+#save-button {
+    cursor: pointer;
+    background-color: #0d3957bf;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+    margin: 5px;
 }
 
 .example-form {

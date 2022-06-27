@@ -8,6 +8,7 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
 import { EmployeeFormComponent } from './components/employee-form/employee-from.component';
 import { DepartmentFormComponent } from './components/department-form/department-form.component';
 import { PositionFormComponent } from './components/position-form/position-form.component';
+import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -26,7 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
         AdminNavbarComponent,
         EmployeeFormComponent,
         DepartmentFormComponent,
-        PositionFormComponent
+        PositionFormComponent,
+        EmployeeCardComponent,
     ],
     exports: [
         CommonModule,
@@ -34,7 +36,8 @@ import { MatSelectModule } from '@angular/material/select';
         AdminNavbarComponent,
         EmployeeFormComponent,
         DepartmentFormComponent,
-        PositionFormComponent
-    ]
+        PositionFormComponent,
+        EmployeeCardComponent
+    ],
 })
 export class SharedModule { }

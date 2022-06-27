@@ -1,35 +1,6 @@
 :host {
     width: 100%;
-}
-
-.form-create-department-container {
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.form-create {
-    height: 80%;
-    width: 100%;
-    background-color: #ffffffb0;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.form-contairner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.division-container {
-    display: flex;
 }
 
 .form {

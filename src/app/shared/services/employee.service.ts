@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Employee } from 'src/app/interface/Employee';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class EmployeeService {
 
   createEmplyee(employee: any) {
     return this.http.post<any>(`${this.API}/employees/register`, employee);
+  }
+
+  update(employee: Employee){
+    return this.http.put<Employee>(`${this.API}/employees/:id`, employee);
   }
 
   getAll() {

@@ -1,43 +1,33 @@
-<div class="form-create-position-container">
-    <div class="form-create">
-        <app-side-navbar></app-side-navbar>
-        <div class="form-container">
-            <app-admin-navbar></app-admin-navbar>
-            <form method="POST" (submit)="onSubmit(form.value)" [formGroup]="form" class="form">
-                <h1>Create new Position</h1>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Name</mat-label>
-                    <input type="text" matInput formControlName="name" placeholder="Example">
-                    <mat-error *ngIf="form.get('name')?.errors && !form.get('name')?.hasError('required')">
-                        Please enter a valid name
-                    </mat-error>
-                    <mat-error *ngIf="form.get('name')?.hasError('required')">
-                        Name is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Salary Multiplayer</mat-label>
-                    <input type="number" matInput formControlName="salaryMultiplayer" placeholder="Type number">
-                    <mat-error
-                        *ngIf="form.get('salaryMultiplayer') && !form.get('salaryMultiplayer').hasError('required')">
-                        Please enter a valid multiplayer. The minimum is 1.0. The maximum is 2.0
-                    </mat-error>
-                    <mat-error *ngIf="form.get('salaryMultiplayer').hasError('required')">
-                        This field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Shift</mat-label>
-                    <mat-select formControlName="shift" name="shift">
-                        <mat-option *ngFor="let shift of shifts" [value]="shift">
-                            {{shift}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <input type="submit" id="submit"
-                    [disabled]="form.get('name').invalid && form.get('salaryMultiplayer').invalid">
-                <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
-            </form>
-        </div>
-    </div>
-</div>
+<form method="POST" (submit)="onSubmit(form.value)" [formGroup]="form" class="form">
+    <h1>Create new Position</h1>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Example">
+        <mat-error *ngIf="form.get('name')?.errors && !form.get('name')?.hasError('required')">
+            Please enter a valid name
+        </mat-error>
+        <mat-error *ngIf="form.get('name')?.hasError('required')">
+            Name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Salary Multiplayer</mat-label>
+        <input type="number" matInput formControlName="salaryMultiplayer" placeholder="Type number">
+        <mat-error *ngIf="form.get('salaryMultiplayer') && !form.get('salaryMultiplayer').hasError('required')">
+            Please enter a valid multiplayer. The minimum is 1.0. The maximum is 2.0
+        </mat-error>
+        <mat-error *ngIf="form.get('salaryMultiplayer').hasError('required')">
+            This field is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Shift</mat-label>
+        <mat-select formControlName="shift" name="shift">
+            <mat-option *ngFor="let shift of shifts" [value]="shift">
+                {{shift}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <input type="submit" id="submit" [disabled]="form.get('name').invalid && form.get('salaryMultiplayer').invalid">
+    <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
+</form>

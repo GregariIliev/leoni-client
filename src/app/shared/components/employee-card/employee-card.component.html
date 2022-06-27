@@ -1,0 +1,22 @@
+<div *ngIf="!modify" class="card">
+    <div class="info-rows">
+        <span class="bold">LEONI</span>
+        <span>Bulgaria</span>
+        <span>Start Data 08-03-21</span>
+    </div>
+    <div class="info-rows">
+        <span class="employee-info">Gregari Georgiev Iliev</span>
+    </div>
+    <div class="info-rows">
+        <span class="bold">Position:</span> Cutting Operator
+        <span class="bold">Department:</span> Cutting
+    </div>
+    <div class="info-rows">
+        <span class="bold">LEONI №</span>12275
+    </div>
+</div>
+<app-employee-from *ngIf="modify"></app-employee-from>
+<div *ngIf="!modify" class="buttons-container">
+    <button (click)="onModify()">Modify</button>
+    <button>Delete</button>
+</div>

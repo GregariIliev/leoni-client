@@ -1,102 +1,100 @@
-<div [ngClass]="'register-container'">
-    <div class="register">
-        <app-side-navbar></app-side-navbar>
-        <div class="form-container">
-            <app-admin-navbar></app-admin-navbar>
-            <form method="POST" [ngClass]="'form'" (submit)="onSubmit()" [formGroup]="form">
-                <h1>Hire new Employee</h1>
-                <div [ngClass]="'register-name-data'">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>First Name</mat-label>
-                        <input type="text" matInput formControlName="firstName" placeholder="Example">
-                        <mat-error
-                            *ngIf="form.get('firstName')?.errors && !form.get('firstName')?.hasError('required')">
-                            Please enter a valid first name
-                        </mat-error>
-                        <mat-error *ngIf="form.get('firstName')?.errors">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Middle Name</mat-label>
-                        <input type="text" matInput formControlName="middleName" placeholder="Example">
-                        <mat-error
-                            *ngIf="form.get('middleName')?.errors && !form.get('middleName')?.hasError('required')">
-                            Please enter a valid middle name
-                        </mat-error>
-                        <mat-error *ngIf="form.get('middleName')?.errors">
-                            Middle name is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Last Name</mat-label>
-                        <input type="text" matInput formControlName="lastName" placeholder="Example">
-                        <mat-error *ngIf="form.get('lastName')?.errors && !form.get('lastName')?.hasError('required')">
-                            Please enter a valid last name
-                        </mat-error>
-                        <mat-error *ngIf="form.get('lastName')?.errors">
-                            Last name is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="adress-phone">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Address Name</mat-label>
-                        <input type="text" matInput formControlName="address" placeholder="Example">
-                        <mat-error *ngIf="form.get('address')?.errors && !form.get('address')?.hasError('required')">
-                            Please enter a valid address
-                        </mat-error>
-                        <mat-error *ngIf="form.get('address')?.errors">
-                            Address is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Phone</mat-label>
-                        <input type="text" matInput formControlName="phone" placeholder="+089 658 5351">
-                        <mat-error *ngIf="form.get('phone')?.errors && !form.get('phone')?.hasError('required')">
-                            Please enter a valid phone
-                        </mat-error>
-                        <mat-error *ngIf="form.get('phone')?.errors">
-                            Phone is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div [ngClass]="'register-work-data'">
-                    <div [ngClass]="'register-select'">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Department</mat-label>
-                            <mat-select formControlName="department_id" (selectionChange)="onChangeDepartment($event)"
-                                name="department">
-                                <mat-option *ngFor="let department of departments" [value]="department.id">
-                                    {{department.name}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div [ngClass]="'register-select'">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Position</mat-label>
-                            <mat-select formControlName="position_id" (selectionChange)="onChangePosition($event)" name="position">
-                                <mat-option *ngFor="let position of positions" [value]="position.id">
-                                    {{position.name}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div [ngClass]="'register-select'">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Shift</mat-label>
-                            <mat-select formControlName="shift" name="shift">
-                                <mat-option *ngFor="let shift of shifts" [value]="shift">
-                                    {{shift}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <input id="register-button" type="submit" value="Register" [disabled]="form.invalid" >
-                <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
-            </form>
+<form method="POST" [ngClass]="'form'" (submit)="onSubmit()" [formGroup]="form">
+    <h1 *ngIf="!form.disabled">Hire new Employee</h1>
+    <h1 *ngIf="">Employee is created successful</h1>
+    <div [ngClass]="'register-name-data'">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput formControlName="firstName" placeholder="Example">
+            <mat-error *ngIf="form.get('firstName')?.errors && !form.get('firstName')?.hasError('required')">
+                Please enter a valid first name
+            </mat-error>
+            <mat-error *ngIf="form.get('firstName')?.errors">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Middle Name</mat-label>
+            <input type="text" matInput formControlName="middleName" placeholder="Example">
+            <mat-error *ngIf="form.get('middleName')?.errors && !form.get('middleName')?.hasError('required')">
+                Please enter a valid middle name
+            </mat-error>
+            <mat-error *ngIf="form.get('middleName')?.errors">
+                Middle name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput formControlName="lastName" placeholder="Example">
+            <mat-error *ngIf="form.get('lastName')?.errors && !form.get('lastName')?.hasError('required')">
+                Please enter a valid last name
+            </mat-error>
+            <mat-error *ngIf="form.get('lastName')?.errors">
+                Last name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="adress-phone">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address Name</mat-label>
+            <input type="text" matInput formControlName="address" placeholder="Example">
+            <mat-error *ngIf="form.get('address')?.errors && !form.get('address')?.hasError('required')">
+                Please enter a valid address
+            </mat-error>
+            <mat-error *ngIf="form.get('address')?.errors">
+                Address is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input type="number" matInput formControlName="phone" placeholder="+089 658 5351">
+            <mat-error *ngIf="form.get('phone')?.errors && !form.get('phone')?.hasError('required')">
+                Please enter a valid phone
+            </mat-error>
+            <mat-error *ngIf="form.get('phone')?.errors">
+                Phone is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div [ngClass]="'register-work-data'">
+        <div [ngClass]="'register-select'">
+            <mat-form-field appearance="fill">
+                <mat-label>Department</mat-label>
+                <mat-select formControlName="department_id" (selectionChange)="onChangeDepartment($event)"
+                    name="department">
+                    <mat-option *ngFor="let department of departments" [value]="department.id">
+                        {{department.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div [ngClass]="'register-select'">
+            <mat-form-field appearance="fill">
+                <mat-label>Position</mat-label>
+                <mat-select formControlName="position_id" (selectionChange)="onChangePosition($event)" name="position">
+                    <mat-option *ngFor="let position of positions" [value]="position.id">
+                        {{position.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div [ngClass]="'register-select'">
+            <mat-form-field appearance="fill">
+                <mat-label>Shift</mat-label>
+                <mat-select formControlName="shift" name="shift">
+                    <mat-option *ngFor="let shift of shifts" [value]="shift">
+                        {{shift}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
     </div>
-</div>
+
+    <input *ngIf="!employeeIsCreated" id="register-button" type="submit" value="Register" [disabled]="form.invalid">
+
+    <div class="buttons-container">
+        <button (click)="onSave()" *ngIf="enableSaveButton" class="buttons">Save</button>
+        <button (click)="onModify()" *ngIf="enableModifyButtons" class="buttons">Modify</button>
+        <button (click)="onDelete()" *ngIf="enableModifyButtons" class="buttons">Delete</button>
+    </div>
+    <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
+</form>

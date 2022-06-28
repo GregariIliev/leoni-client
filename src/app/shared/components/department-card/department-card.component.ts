@@ -37,8 +37,9 @@ export class DepartmentCardComponent implements OnInit {
     })
   }
 
-  onModify(){
-   this.modify = !this.modify;
+  onModify() {
+    this.getDepartment();
+    this.modify = !this.modify;
   }
 
   onDelete(){

@@ -48,7 +48,9 @@ export class DepartmentCardComponent implements OnInit {
     })
   }
 
-  onPrint(){
-
+  onPrint() {
+    this.department$.subscribe(dep => {
+      console.log(JSON.stringify(dep, null, 4));
+    })
   }
 }

@@ -12,17 +12,19 @@ import { PositionFormComponent } from 'src/app/shared/components/position-form/p
 import { EmployeeCardComponent } from 'src/app/shared/components/employee-card/employee-card.component';
 
 const routes: Routes = [
-  { path: '', component: AdminPanelComponent , children: [
-    { path: 'hire-employee', component: EmployeeFormComponent, canActivate: [AuthorizationGuard], resolve: { allDepartments: DataResolver } },
-    { path: 'create-department', component: DepartmentFormComponent, canActivate: [AuthorizationGuard], resolve: { allPositions: DataResolver } },
-    { path: 'create-position', component: PositionFormComponent, canActivate: [AuthorizationGuard] },
+  {
+    path: '', component: AdminPanelComponent, children: [
+      { path: 'hire-employee', component: EmployeeFormComponent, canActivate: [AuthorizationGuard], resolve: { allDepartments: DataResolver } },
+      { path: 'create-department', component: DepartmentFormComponent, canActivate: [AuthorizationGuard], resolve: { allPositions: DataResolver } },
+      { path: 'create-position', component: PositionFormComponent, canActivate: [AuthorizationGuard] },
 
-    { path: 'employees', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-    { path: 'employees/:id', component: EmployeeCardComponent, pathMatch: 'full' },
-    
-    { path: 'departments', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-    { path: 'positions', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-  ]},
+      { path: 'employees', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
+      { path: 'employees/:id', component: EmployeeCardComponent, canActivate: [AuthorizationGuard] },
+
+      { path: 'departments', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
+      { path: 'positions', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
+    ]
+  },
 ];
 
 @NgModule({

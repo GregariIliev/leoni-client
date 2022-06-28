@@ -23,12 +23,11 @@ export class EmployeeFormComponent implements OnInit {
   
   errorSubject = new BehaviorSubject<any>('');
   errorMessage = this.errorSubject.asObservable();
-
+  
   public departments!: any;
   public positions!: any;
   public shifts!: any;
-
-  err!: any;
+  
   form!: FormGroup;
 
 

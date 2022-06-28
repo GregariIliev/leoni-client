@@ -45,7 +45,10 @@ export class EmployeeCardComponent implements OnInit {
     })
   }
 
-  onModify(){
-    this.modify = true
+  onPrint() {
+    this.employee$.subscribe(emp => {
+      console.log(JSON.stringify(emp, null, 4));
+    })
   }
+
 }

@@ -18,6 +18,9 @@ import { Position } from 'src/app/interface/Position';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeFormComponent implements OnInit {
+  @Input() modify!: boolean;
+  @Input() empCard$!: BehaviorSubject<Employee>;
+  
   errorSubject = new BehaviorSubject<any>('');
   errorMessage = this.errorSubject.asObservable();
 

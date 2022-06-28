@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { DepartmentService } from '../../services/department.service';
 

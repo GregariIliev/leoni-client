@@ -88,7 +88,7 @@
             </mat-form-field>
         </div>
     </div>
-    <input *ngIf="!modify" id="register-button" type="submit" value="Register" [disabled]="form.invalid">
-    <input *ngIf="modify" id="save-button" type="submit" value="Save">
+    <input *ngIf="!modify" class="modify-buttons" type="submit" value="Register" [disabled]="form.invalid">
+    <input *ngIf="modify" class="modify-buttons" type="submit" value="Save">
     <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
 </form>

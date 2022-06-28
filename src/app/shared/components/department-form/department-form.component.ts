@@ -56,19 +56,36 @@ export class DepartmentFormComponent implements OnInit {
     })
   }
 
-  onSubmit(value: any) {
-    this.departmentService.create(value).subscribe({
-      next: (department: Department) => {
+  onSubmit() {
+    const department: Department = this.form.value;
 
-      },
-      error: (e) => {
-        let error = e.error?.errors[0]?.message;
-        this.errorSubject.next(error);
-      },
-      complete: () => {
-        //redirect
-      }
-    });
+    if (this.modify) {
+
+      this.departmentService.update(department, this.departmentId).subscribe({
+        next: (id: Department) => {
+        },
+        error: (e) => {
+          let error = e.error.errors[0].message;
+          this.errorSubject.next(error);
+        },
+        complete: () => {
+          this.modifySaved.emit()
+        }
+      })
+
+    } else {
+      this.departmentService.create(department).subscribe({
+        next: (department: Department) => {
+          this.router.navigateByUrl(`/admin-panel/departments/${department.id}`);
+        },
+        error: (e) => {
+          let error = e.error.errors[0].message;
+          this.errorSubject.next(error);
+        },
+        complete: () => {
+        }
+      })
+    }
   }
 
   initForm(): FormGroup {

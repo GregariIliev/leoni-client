@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { DepartmentService } from '../../services/department.service';
+import { PositionService } from '../../services/position.service';
 
 import { Department } from 'src/app/interface/Department';
 import { Position } from 'src/app/interface/Position';

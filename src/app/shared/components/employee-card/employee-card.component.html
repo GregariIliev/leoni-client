@@ -2,17 +2,17 @@
     <div class="info-rows">
         <span class="bold">LEONI</span>
         <span>Bulgaria</span>
-        <span>Start Data 08-03-21</span>
+        <span>{{(employee$ | async).createdAt | date}}</span>
     </div>
     <div class="info-rows">
-        <span class="employee-info">Gregari Georgiev Iliev</span>
+        <span class="employee-name">{{employeeFullName}}</span>
     </div>
     <div class="info-rows">
-        <span class="bold">Position:</span> Cutting Operator
-        <span class="bold">Department:</span> Cutting
+        <span class="bold">Department:</span> {{(employee$ | async)?.Department?.name}}
+        <span class="bold">Position:</span> {{(employee$ | async)?.Position?.name}}
     </div>
     <div class="info-rows">
-        <span class="bold">LEONI №</span>12275
+        <span class="bold">LEONI №</span>{{(employee$ | async).id}}
     </div>
 </div>
 <app-employee-from *ngIf="modify"></app-employee-from>

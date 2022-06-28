@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { EmployeeService } from '../../services/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-card',
@@ -16,7 +17,11 @@ export class EmployeeCardComponent implements OnInit {
   employeeId!: any;
   employeeFullName!: string;
 
-  constructor(private readonly activatedRoute: ActivatedRoute, private readonly employeeService: EmployeeService) { }
+  constructor(
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly employeeService: EmployeeService,
+    private readonly router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getEmployee();

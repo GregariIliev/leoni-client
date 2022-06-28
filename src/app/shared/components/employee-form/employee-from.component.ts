@@ -46,7 +46,7 @@ export class EmployeeFormComponent implements OnInit {
     if (this.modify) {
       this.empCard$.subscribe(employee => {
         this.employeeId = employee.id;
-        
+
         this.form.patchValue({
           firstName: employee.firstName,
           middleName: employee.middleName,
@@ -77,17 +77,15 @@ export class EmployeeFormComponent implements OnInit {
     const employee: Employee = this.form.value;
 
     if (this.modify) {
-
       this.employeeService.update(employee, this.employeeId).subscribe({
-        next: (employee: Employee) => {
-          this.empCard$.next(employee);
-          this.modifySaved.emit()
+        next: (id: Employee) => {
         },
         error: (e) => {
           let error = e.error.errors[0].message;
           this.errorSubject.next(error);
         },
         complete: () => {
+          this.modifySaved.emit()
         }
       })
 

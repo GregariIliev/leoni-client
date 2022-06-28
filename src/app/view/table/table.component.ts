@@ -34,8 +34,6 @@ export class TableComponent implements OnInit {
 
   }
   onClick(row : any){
-    this.router.navigateByUrl(`/admin-panel/employees/${row.id}`);
-    
-    
+    this.router.navigateByUrl(`${this.router.url}/${row.id}`);
   }
 }

@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { DepartmentService } from '../../services/department.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-department-card',
   templateUrl: './department-card.component.html',

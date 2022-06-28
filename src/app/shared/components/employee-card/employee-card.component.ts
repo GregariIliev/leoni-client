@@ -10,13 +10,13 @@ import { EmployeeService } from '../../services/employee.service';
   styleUrls: ['./employee-card.component.scss']
 })
 export class EmployeeCardComponent implements OnInit {
-
   modify: boolean = false
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     
     ) { }
+  constructor(private readonly activatedRoute: ActivatedRoute, private readonly employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe({

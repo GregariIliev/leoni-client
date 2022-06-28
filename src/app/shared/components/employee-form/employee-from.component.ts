@@ -34,7 +34,7 @@ export class EmployeeFormComponent implements OnInit {
   employeeId!: number;
 
   constructor(
-    private readonly route: ActivatedRoute,
+    private readonly router: Router,
     private readonly employeeService: EmployeeService,
     private readonly fb: FormBuilder
   ) { }

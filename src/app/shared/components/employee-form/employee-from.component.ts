@@ -21,6 +21,8 @@ export class EmployeeFormComponent implements OnInit {
   @Input() modify!: boolean;
   @Input() empCard$!: BehaviorSubject<Employee>;
   
+  @Output() modifySaved = new EventEmitter<boolean>();
+  
   errorSubject = new BehaviorSubject<any>('');
   errorMessage = this.errorSubject.asObservable();
   

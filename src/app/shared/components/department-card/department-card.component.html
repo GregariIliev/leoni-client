@@ -6,9 +6,9 @@
         <span class="department-name">{{(department$ | async).name | uppercase}}</span>
     </div>
 </div>
-<app-department-form *ngIf="modify" [modify]="true" [depCard$]="department$" (modifySaved)="onModify()" ></app-department-form>
-<div  class="buttons-container">
-    <button *ngIf="!modify" (click)="onModify()" >Modify</button>
-     <button *ngIf="!modify" (click)="onDelete()">Delete</button>
-     <button *ngIf="!modify" (clicl)="onPrint()">Print</button> 
+<app-department-form *ngIf="modify" [modify]="true" [depCard$]="department$" (modifySaved)="onModify()"></app-department-form>
+<div class="buttons-container">
+    <button *ngIf="!modify" (click)="onModify()">Modify</button>
+    <button *ngIf="!modify" (click)="onDelete()">Delete</button>
+    <button *ngIf="!modify" (clicl)="onPrint()">Print</button>
 </div>

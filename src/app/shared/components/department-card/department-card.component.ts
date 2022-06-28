@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { DepartmentService } from '../shared/services/department.service';
+import { DepartmentService } from '../../services/department.service';
 
 @Component({
   selector: 'app-department-card',

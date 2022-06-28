@@ -17,11 +17,17 @@ import { Position } from 'src/app/interface/Position';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DepartmentFormComponent implements OnInit {
+  @Input() modify!: boolean;
+  @Input() depCard$!: BehaviorSubject<Department>;
+
+  @Output() modifySaved = new EventEmitter<boolean>();
+
   errorSubject = new BehaviorSubject<string>('');
   errorMessage = this.errorSubject.asObservable();
 
   form!: any;
   positions!: Position[];
+  departmentId!: string;
 
   constructor(
     private readonly router: Router,

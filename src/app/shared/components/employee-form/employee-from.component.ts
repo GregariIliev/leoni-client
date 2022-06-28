@@ -31,7 +31,7 @@ export class EmployeeFormComponent implements OnInit {
   public shifts!: any;
   
   form!: FormGroup;
-
+  employeeId!: number;
 
   constructor(
     private readonly route: ActivatedRoute,

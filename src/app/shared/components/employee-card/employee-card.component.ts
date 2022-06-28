@@ -38,7 +38,10 @@ export class EmployeeCardComponent implements OnInit {
     this.modify = !this.modify;
   }
 
-      }
+  onDelete() {
+    this.employeeService.delete(this.employeeId).subscribe(data => {
+      console.log(data);
+      
     })
   }
 

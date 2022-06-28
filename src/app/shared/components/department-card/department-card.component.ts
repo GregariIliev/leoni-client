@@ -27,8 +27,8 @@ export class DepartmentCardComponent implements OnInit {
     this.getDepartment();
   }
 
-  getDepartment(){
-    this.activatedRoute.params.subscribe(({id}) => {
+  getDepartment() {
+    this.activatedRoute.params.subscribe(({ id }) => {
       this.departmentId = id
     })
 

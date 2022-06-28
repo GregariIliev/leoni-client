@@ -13,8 +13,8 @@ export class DepartmentService {
 
   constructor(private readonly http: HttpClient) { }
 
-  getAll(): Observable<Department> {
-    return this.http.get<Department>(`${this.API}/departments`);
+  getAll(): Observable<Department[]> {
+    return this.http.get<Department[]>(`${this.API}/departments`);
   }
 
   getAllDepartmentsPositions(): Observable<Department> {

@@ -33,6 +33,10 @@ export class EmployeeCardComponent implements OnInit {
     })
   }
 
+  onModify() {
+    this.getEmployee();
+    this.modify = !this.modify;
+  }
 
       }
     })

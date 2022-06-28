@@ -9,6 +9,7 @@ import { EmployeeFormComponent } from './components/employee-form/employee-from.
 import { DepartmentFormComponent } from './components/department-form/department-form.component';
 import { PositionFormComponent } from './components/position-form/position-form.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
+import { DepartmentCardComponent } from './components/department-card/department-card.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -29,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
         DepartmentFormComponent,
         PositionFormComponent,
         EmployeeCardComponent,
+        DepartmentCardComponent
     ],
     exports: [
         CommonModule,
@@ -37,7 +39,8 @@ import { MatSelectModule } from '@angular/material/select';
         EmployeeFormComponent,
         DepartmentFormComponent,
         PositionFormComponent,
-        EmployeeCardComponent
+        EmployeeCardComponent,
+        DepartmentCardComponent
     ],
 })
 export class SharedModule { }

@@ -21,6 +21,17 @@ export class EmployeeCardComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe({
       next: (employee) => {
+  getEmployee() {
+    this.activatedRoute.params.subscribe(({ id }) => {
+      this.employeeId = id;
+    })
+
+    this.employeeService.getById(this.employeeId).subscribe(emp => {
+      this.employeeFullName = `${emp.firstName} ${emp.middleName} ${emp.lastName}`;
+      this.employee$.next(emp);
+    })
+  }
+
 
       }
     })

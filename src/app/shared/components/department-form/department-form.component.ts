@@ -38,10 +38,21 @@ export class DepartmentFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.initForm();
-    this.activatedRoute.data.subscribe({
-      next: ({allPositions}: any) => {
-        this.positions = allPositions
-      }
+
+    if (this.modify) {
+      this.depCard$.subscribe(department => {
+        this.departmentId = department.id;
+
+        this.form.patchValue({
+          name: department.name,
+          maxEmployees: department.maxEmployees,
+          salaryMultiplayer: department.salaryMultiplayer
+        })
+      })
+    }
+
+    this.positionService.getAll().subscribe(positions => {
+      this.positions = positions
     })
   }
 

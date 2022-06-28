@@ -10,6 +10,7 @@ import { EmployeeFormComponent } from 'src/app/shared/components/employee-form/e
 import { DepartmentFormComponent } from 'src/app/shared/components/department-form/department-form.component';
 import { PositionFormComponent } from 'src/app/shared/components/position-form/position-form.component';
 import { EmployeeCardComponent } from 'src/app/shared/components/employee-card/employee-card.component';
+import { DepartmentCardComponent } from 'src/app/shared/components/department-card/department-card.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'employees/:id', component: EmployeeCardComponent, canActivate: [AuthorizationGuard] },
 
       { path: 'departments', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
+      { path: 'departments/:id', component: DepartmentCardComponent, canActivate: [AuthorizationGuard] },
       { path: 'positions', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
     ]
   },

@@ -42,8 +42,10 @@ export class DepartmentCardComponent implements OnInit {
     this.modify = !this.modify;
   }
 
-  onDelete(){
-
+  onDelete() {
+    this.departmentService.delete(this.departmentId).subscribe(data => {
+      this.router.navigateByUrl('/admin-panel/departments');
+    })
   }
 
   onPrint(){

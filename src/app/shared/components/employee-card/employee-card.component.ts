@@ -12,10 +12,8 @@ import { EmployeeService } from '../../services/employee.service';
 export class EmployeeCardComponent implements OnInit {
   modify: boolean = false
 
-  constructor(
-    private readonly activatedRoute: ActivatedRoute,
-    
-    ) { }
+  employee$ = new BehaviorSubject<any>({});
+
   constructor(private readonly activatedRoute: ActivatedRoute, private readonly employeeService: EmployeeService) { }
 
   ngOnInit(): void {

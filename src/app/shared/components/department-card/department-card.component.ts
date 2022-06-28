@@ -16,10 +16,11 @@ export class DepartmentCardComponent implements OnInit {
 
   department$ = new BehaviorSubject<any>({});
   departmentId!: any;
-  
+
   constructor(
     private readonly activatedRoute: ActivatedRoute,
-    private readonly departmentService: DepartmentService
+    private readonly departmentService: DepartmentService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {

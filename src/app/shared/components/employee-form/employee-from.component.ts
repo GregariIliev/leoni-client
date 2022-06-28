@@ -43,8 +43,22 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.initForm();
 
-    this.route.data.subscribe(({ allDepartments }) => {
-      this.departments = allDepartments
+    if (this.modify) {
+      this.empCard$.subscribe(employee => {
+        this.employeeId = employee.id;
+        
+        this.form.patchValue({
+          firstName: employee.firstName,
+          middleName: employee.middleName,
+          lastName: employee.lastName,
+          address: employee.address,
+          phone: employee.phone
+        })
+      })
+    }
+
+    this.departmentService.getAll().subscribe((dep: Department[]) => {
+      this.departments = dep
     })
   }
 
@@ -60,35 +74,50 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   onSubmit() {
-      const employee: Employee = this.form.value;
+    const employee: Employee = this.form.value;
 
-      this.employeeService.createEmplyee(employee).subscribe({
+    if (this.modify) {
+
+      this.employeeService.update(employee, this.employeeId).subscribe({
         next: (employee: Employee) => {
-          
+          this.empCard$.next(employee);
+          this.modifySaved.emit()
         },
         error: (e) => {
           let error = e.error.errors[0].message;
           this.errorSubject.next(error);
         },
         complete: () => {
-
         }
       })
+
+    } else {
+      this.employeeService.createEmplyee(employee).subscribe({
+        next: (employee: Employee) => {
+          this.router.navigateByUrl(`/admin-panel/employees/${employee.id}`);
+        },
+        error: (e) => {
+          let error = e.error.errors[0].message;
+          this.errorSubject.next(error);
+        },
+        complete: () => {
+        }
+      })
+    }
   }
+
 
   initForm(): FormGroup {
     return this.fb.group({
-      firstName: ['', [Validators.required, Validators.min(4)]],
+      firstName: ['', [Validators.required,]],
       middleName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       address: ['', [Validators.required]],
       phone: ['', [Validators.required]],
-      shift: ['', [Validators.required]],
       department_id: ['', [Validators.required]],
       position_id: ['', [Validators.required]],
+      shift: ['', [Validators.required]],
     })
   }
 
-  get departmentId() { return this.form.get('department_id') }
-  get positionId() { return this.form.get('position_id') }
 }

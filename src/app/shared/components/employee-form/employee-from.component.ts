@@ -36,6 +36,7 @@ export class EmployeeFormComponent implements OnInit {
   constructor(
     private readonly router: Router,
     private readonly employeeService: EmployeeService,
+    private readonly departmentService: DepartmentService,
     private readonly fb: FormBuilder
   ) { }
 

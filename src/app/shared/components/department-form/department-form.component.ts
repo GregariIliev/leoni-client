@@ -24,8 +24,10 @@ export class DepartmentFormComponent implements OnInit {
   positions!: Position[];
 
   constructor(
+    private readonly router: Router,
     private readonly departmentService: DepartmentService,
     private readonly activatedRoute: ActivatedRoute,
+    private readonly positionService: PositionService,
     private readonly fb: FormBuilder
   ) { }
 

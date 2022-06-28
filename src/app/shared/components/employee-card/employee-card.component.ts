@@ -40,8 +40,7 @@ export class EmployeeCardComponent implements OnInit {
 
   onDelete() {
     this.employeeService.delete(this.employeeId).subscribe(data => {
-      console.log(data);
-      
+      this.router.navigateByUrl('/admin-panel/employees');
     })
   }
 

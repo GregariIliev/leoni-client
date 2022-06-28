@@ -13,6 +13,8 @@ export class EmployeeCardComponent implements OnInit {
   modify: boolean = false
 
   employee$ = new BehaviorSubject<any>({});
+  employeeId!: any;
+  employeeFullName!: string;
 
   constructor(private readonly activatedRoute: ActivatedRoute, private readonly employeeService: EmployeeService) { }
 

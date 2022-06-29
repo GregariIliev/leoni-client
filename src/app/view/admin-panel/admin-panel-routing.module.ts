@@ -11,6 +11,7 @@ import { DepartmentFormComponent } from 'src/app/shared/components/department-fo
 import { PositionFormComponent } from 'src/app/shared/components/position-form/position-form.component';
 import { EmployeeCardComponent } from 'src/app/shared/components/employee-card/employee-card.component';
 import { DepartmentCardComponent } from 'src/app/shared/components/department-card/department-card.component';
+import { PositionCardComponent } from 'src/app/shared/components/position-card/position-card.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'departments', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
       { path: 'departments/:id', component: DepartmentCardComponent, canActivate: [AuthorizationGuard] },
       { path: 'positions', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
+      { path: 'positions/:id', component: PositionCardComponent, canActivate: [AuthorizationGuard] },
     ]
   },
 ];

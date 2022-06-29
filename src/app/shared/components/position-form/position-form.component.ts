@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
-import { ActivatedRoute } from '@angular/router';
 
 import { PositionService } from '../../services/position.service';
 

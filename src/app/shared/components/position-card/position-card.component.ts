@@ -54,4 +54,9 @@ export class PositionCardComponent implements OnInit, OnDestroy {
     })
   }
 
+  onPrint() {
+    this.position$.subscribe(pos => {
+      console.log(JSON.stringify(pos, null, 4));
+    })
+  }
 }

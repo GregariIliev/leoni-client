@@ -30,5 +30,12 @@ export class PositionService {
   create(position: Position) {
     return this.http.post<Position>(`${this.API}/positions`, position);
   }
+
+  update(position: Position, positionId: string) {
+    return this.http.put<Position>(`${this.API}/positions/${positionId}`, position)
+  }
+
+  delete(positionId: string) {
+    return this.http.delete<Position>(`${this.API}/positions/${positionId}`);
   }
 }

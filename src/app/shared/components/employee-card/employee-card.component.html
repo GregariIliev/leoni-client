@@ -15,7 +15,7 @@
         <span class="bold">LEONI №</span>{{(employee$ | async).id}}
     </div>
 </div>
-<app-employee-from *ngIf="modify" [modify]="true" [empCard$]="employee$" (modifySaved)="onModify()"></app-employee-from>
+<app-employee-from *ngIf="modify" [modify]="modify" [empCard$]="employee$" (modifySaved)="onModify()"></app-employee-from>
 <div  class="buttons-container">
     <button *ngIf="!modify" (click)="onModify()">Modify</button>
     <button *ngIf="!modify" (click)="onDelete()">Delete</button>

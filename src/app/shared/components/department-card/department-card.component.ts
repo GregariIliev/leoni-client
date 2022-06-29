@@ -16,6 +16,7 @@ export class DepartmentCardComponent implements OnInit, OnDestroy {
 
   department$ = new BehaviorSubject<any>({});
   departmentId!: any;
+  err$ = new BehaviorSubject<string>('');
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -32,8 +33,13 @@ export class DepartmentCardComponent implements OnInit, OnDestroy {
       this.departmentId = id
     })
 
-    this.departmentService.getById(this.departmentId).subscribe(dep => {
-      this.department$.next(dep);
+    this.departmentService.getById(this.departmentId).subscribe({
+      next: (dep) => {
+        this.department$.next(dep);
+      },
+      error: (err) => {
+        this.err$.next(err.statusText);
+      }
     })
   }
 
@@ -57,5 +63,6 @@ export class DepartmentCardComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.department$.unsubscribe();
+    this.err$.unsubscribe();
   }
 }

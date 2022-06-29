@@ -15,6 +15,7 @@ import { Position } from 'src/app/interface/Position';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PositionFormComponent implements OnInit {
+  @Input() modify!: boolean;
   errorSubject = new BehaviorSubject<any>('');
   errorMessage = this.errorSubject.asObservable();
 

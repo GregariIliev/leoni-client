@@ -59,4 +59,9 @@ export class PositionCardComponent implements OnInit, OnDestroy {
       console.log(JSON.stringify(pos, null, 4));
     })
   }
+
+  ngOnDestroy(): void {
+    this.position$.unsubscribe();
+    this.err$.unsubscribe();
+  }
 }

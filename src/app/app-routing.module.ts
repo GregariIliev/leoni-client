@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'Login' },
   { path: 'dashboard', loadChildren: () => import('./view/dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'admin-panel', loadChildren: () => import('./view/admin-panel/admin-panel.module').then(m => m.AdminPanelModule) },
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({

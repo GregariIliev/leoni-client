@@ -7,7 +7,7 @@
         <span class="position-name">{{(position$ | async).name}}</span>
     </div>
 </div>
-<app-department-form *ngIf="modify" [modify]="modify" [depCard$]="position$" (modifySaved)="onModify()"></app-department-form>
+<app-position-form *ngIf="modify" [modify]="modify" [posCard$]="position$" (modifySaved)="onModify()"></app-position-form>
 <div class="buttons-container">
     <button *ngIf="!modify" (click)="onModify()">Modify</button>
     <button *ngIf="!modify" (click)="onDelete()">Delete</button>

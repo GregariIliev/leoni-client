@@ -47,4 +47,11 @@ export class PositionCardComponent implements OnInit, OnDestroy {
     this.getPosition();
     this.modify = !this.modify;
   }
+
+  onDelete() {
+    this.positionService.delete(this.positionId).subscribe(data => {
+      this.router.navigateByUrl('/admin-panel/positions')
+    })
+  }
+
 }

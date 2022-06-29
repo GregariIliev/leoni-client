@@ -48,9 +48,11 @@ export class PositionFormComponent implements OnInit {
   }
 
   onSubmit(position: Position) {
-
+    
+    position.shift = position.shift.toString();
+    
     if (this.modify) {
-      
+
       this.positionService.update(position, this.positionId).subscribe({
         next: (data) => {
         },
@@ -81,7 +83,7 @@ export class PositionFormComponent implements OnInit {
     return this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(20)]],
       salaryMultiplayer: ['', [Validators.required, Validators.min(1), Validators.max(2)]],
-      shift: ['', [Validators.required]],
+      shift: [[''], [Validators.required]],
     })
   }
 }

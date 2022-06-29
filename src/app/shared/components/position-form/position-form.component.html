@@ -29,6 +29,7 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-    <input type="submit" id="submit" [disabled]="form.get('name').invalid && form.get('salaryMultiplayer').invalid">
+    <input *ngIf="!modify" type="submit" id="submit" [disabled]="form.invalid" value="Register">
+    <input *ngIf="modify" type="submit" id="submit" [disabled]="form.invalid" value="Save">
     <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
 </form>

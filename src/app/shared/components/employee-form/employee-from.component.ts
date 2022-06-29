@@ -70,7 +70,7 @@ export class EmployeeFormComponent implements OnInit {
 
 
   onChangePosition(event: any) {
-    this.shifts = this.positions.find((p: any) => p.id === event.value).shift.split(', ');
+    this.shifts = this.positions.find((p: any) => p.id === event.value).shift.split(',');
   }
 
   onSubmit() {

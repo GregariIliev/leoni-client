@@ -51,9 +51,13 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
   }
 
   onDelete() {
-    this.employeeService.delete(this.employeeId).subscribe(data => {
-      this.router.navigateByUrl('/admin-panel/employees');
-    })
+    if (this.employeeId === '1') {
+      this.err$.next('Cannot delete the admin profile');
+    } else {
+      this.employeeService.delete(this.employeeId).subscribe(data => {
+        this.router.navigateByUrl('/admin-panel/employees');
+      })
+    }
   }
 
   onPrint() {

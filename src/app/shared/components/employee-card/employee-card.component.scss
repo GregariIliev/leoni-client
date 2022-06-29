@@ -15,6 +15,7 @@
     min-width: 500px;
     background-color: white;
     border-radius: 10px;
+    text-align: center;
 
     .info-rows {
         width: 100%;
@@ -55,4 +56,11 @@
         margin-top: 10px;
         cursor: pointer;
     }
+}
+
+mat-error {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 5px;
 }

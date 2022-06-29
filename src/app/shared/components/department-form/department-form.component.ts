@@ -60,7 +60,6 @@ export class DepartmentFormComponent implements OnInit {
     const department: Department = this.form.value;
 
     if (this.modify) {
-
       this.departmentService.update(department, this.departmentId).subscribe({
         next: (id: Department) => {
         },

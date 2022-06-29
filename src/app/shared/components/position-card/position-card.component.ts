@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { PositionService } from '../../services/position.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-position-card',
@@ -13,7 +15,9 @@ export class PositionCardComponent implements OnInit {
 
   positions$ = new BehaviorSubject<any>({});
   constructor(
-    private readonly activatedRoute: ActivatedRoute
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly positionService: PositionService,
+    private readonly router: Router,
   ) { }
 
   ngOnInit(): void {

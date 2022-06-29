@@ -1,0 +1,14 @@
+<div *ngIf="!modify" class="card">
+    <div class="info-rows">
+        <span class="department-title">Departmetn</span>
+    </div>
+    <div class="info-rows">
+        <span class="department-name">{{'Machine Operator'}}</span>
+    </div>
+</div>
+<app-department-form *ngIf="modify" [modify]="modify" [depCard$]="positions$" (modifySaved)="onModify()"></app-department-form>
+<div class="buttons-container">
+    <button *ngIf="!modify" (click)="onModify()">Modify</button>
+    <button *ngIf="!modify" (click)="onDelete()">Delete</button>
+    <button *ngIf="!modify" (click)="onPrint()">Print</button>
+</div>

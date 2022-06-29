@@ -23,7 +23,7 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Shift</mat-label>
-        <mat-select formControlName="shift" name="shift">
+        <mat-select formControlName="shift" name="shift" multiple>
             <mat-option *ngFor="let shift of shifts" [value]="shift">
                 {{shift}}
             </mat-option>

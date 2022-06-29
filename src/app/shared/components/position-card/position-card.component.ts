@@ -16,6 +16,8 @@ export class PositionCardComponent implements OnInit {
   position$ = new BehaviorSubject<any>({});
   positionId!: string;
 
+  err$ = new BehaviorSubject<string>('');
+
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly positionService: PositionService,
@@ -31,8 +33,13 @@ export class PositionCardComponent implements OnInit {
      this.positionId = id;
     })
 
-    this.positionService.getById(this.positionId).subscribe(pos => {
-      this.position$.next(pos);
+    this.positionService.getById(this.positionId).subscribe({
+      next: (pos) => {
+        this.position$.next(pos);
+      },
+      error: (err) => {
+        this.err$.next(err.statusText);
+      }
     })
   }
 

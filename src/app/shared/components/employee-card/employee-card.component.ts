@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './employee-card.component.html',
   styleUrls: ['./employee-card.component.scss']
 })
-export class EmployeeCardComponent implements OnInit {
+export class EmployeeCardComponent implements OnInit, OnDestroy {
   modify: boolean = false
 
   employee$ = new BehaviorSubject<any>({});
@@ -53,6 +53,10 @@ export class EmployeeCardComponent implements OnInit {
     this.employee$.subscribe(emp => {
       console.log(JSON.stringify(emp, null, 4));
     })
+  }
+
+  ngOnDestroy(): void {
+   this.employee$.unsubscribe();
   }
 
 }

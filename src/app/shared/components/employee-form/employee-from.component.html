@@ -1,6 +1,6 @@
 <form method="POST" [ngClass]="'form'" (submit)="onSubmit()" [formGroup]="form">
-    <h1 *ngIf="!form.disabled">Hire new Employee</h1>
-    <h1 *ngIf="">Employee is created successful</h1>
+    <h1 *ngIf="!modify">Hire new Employee</h1>
+    <h1 *ngIf="modify">Modify Employee</h1>
     <div [ngClass]="'register-name-data'">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>First Name</mat-label>

@@ -24,6 +24,7 @@ export class PositionFormComponent implements OnInit {
   errorMessage = this.errorSubject.asObservable();
 
   form!: any;
+  positionId!: string;
   shifts: string[] = ['A', 'B', 'C', 'R'];
 
   constructor(

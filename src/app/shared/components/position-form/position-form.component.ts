@@ -79,11 +79,9 @@ export class PositionFormComponent implements OnInit {
 
   initForm(): FormGroup {
     return this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.maxLength(20)]],
       salaryMultiplayer: ['', [Validators.required, Validators.min(1), Validators.max(2)]],
       shift: ['', [Validators.required]],
     })
   }
-
-
 }

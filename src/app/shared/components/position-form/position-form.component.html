@@ -8,7 +8,7 @@
             Please enter a valid name
         </mat-error>
         <mat-error *ngIf="form.get('name')?.hasError('required')">
-            Name is <strong>required</strong>
+            Maximum characters <strong>20</strong>
         </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">

@@ -35,6 +35,16 @@ export class PositionFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.initForm();
+
+    if (this.modify) {
+      this.posCard$.subscribe(position => {
+        this.positionId = position.id
+        this.form.patchValue({
+          name: position.name,
+          salaryMultiplayer: position.salaryMultiplayer,
+        });
+      });
+    }
   }
 
   onSubmit(position: Position) {

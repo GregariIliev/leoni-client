@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './position-card.component.html',
   styleUrls: ['./position-card.component.scss']
 })
-export class PositionCardComponent implements OnInit {
+export class PositionCardComponent implements OnInit, OnDestroy {
   modify: boolean = false;
 
   position$ = new BehaviorSubject<any>({});

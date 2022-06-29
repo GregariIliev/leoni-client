@@ -3,7 +3,7 @@
         <span class="position-title">Position</span>
     </div>
     <div class="info-rows">
-        <span class="department-name">{{'Machine Operator'}}</span>
+        <span class="position-name">{{(position$ | async).name}}</span>
     </div>
 </div>
 <app-department-form *ngIf="modify" [modify]="modify" [depCard$]="positions$" (modifySaved)="onModify()"></app-department-form>

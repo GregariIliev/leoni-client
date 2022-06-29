@@ -17,6 +17,9 @@ import { Position } from 'src/app/interface/Position';
 export class PositionFormComponent implements OnInit {
   @Input() modify!: boolean;
   @Input() posCard$!: BehaviorSubject<Position>;
+
+  @Output() modifySaved = new EventEmitter<boolean>();
+
   errorSubject = new BehaviorSubject<any>('');
   errorMessage = this.errorSubject.asObservable();
 

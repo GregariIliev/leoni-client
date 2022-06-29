@@ -15,19 +15,20 @@ export class PositionService {
   // getAllPositionsInDepartment(department: any): Observable<any> {
   //   return this.http.get<any>(`${this.API}/positions?name=${department}`);
   // }
-  getById(id: string){
+  getById(id: string) {
     return this.http.get<Position>(`${this.API}/positions/${id}`);
   }
 
-  getAll(){
-    return this.http.get<any>(`${this.API}/positions`);
+  getAll() {
+    return this.http.get<Position[]>(`${this.API}/positions`);
   }
 
-  count(){
-    return this.http.get<any>(`${this.API}/positions/count`);
+  count() {
+    return this.http.get<Position>(`${this.API}/positions/count`);
   }
 
-  create(position: any){
-    return this.http.post<any>(`${this.API}/positions`, position);
+  create(position: Position) {
+    return this.http.post<Position>(`${this.API}/positions`, position);
+  }
   }
 }

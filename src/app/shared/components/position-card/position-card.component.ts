@@ -14,6 +14,8 @@ export class PositionCardComponent implements OnInit {
   modify: boolean = false;
 
   position$ = new BehaviorSubject<any>({});
+  positionId!: string;
+
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly positionService: PositionService,

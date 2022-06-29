@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class PositionCardComponent implements OnInit {
   modify: boolean = false;
 
-  positions$ = new BehaviorSubject<any>({});
+  position$ = new BehaviorSubject<any>({});
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly positionService: PositionService,

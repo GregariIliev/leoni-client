@@ -12,12 +12,11 @@ export class AuthorizationGuard implements CanActivate, CanActivateChild {
   constructor(private router: Router, private readonly authService: AuthService) { }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    if (localStorage.getItem('leoni')) {
-      return true
-    } else {
-      this.router.navigateByUrl('login');
-      return false
-    }
+    return this.authService.isAuth().pipe(catchError(err => {
+      localStorage.removeItem('leoni');
+      this.router.navigateByUrl('/login');
+      return of(err);
+    }))
   }
 
   canActivate(

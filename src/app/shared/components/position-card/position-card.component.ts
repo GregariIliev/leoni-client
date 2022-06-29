@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-position-card',
@@ -10,6 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 export class PositionCardComponent implements OnInit {
 
   constructor(
+    private readonly activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {

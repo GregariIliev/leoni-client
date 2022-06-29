@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
+import { Router } from '@angular/router';
 
 import { PositionService } from '../../services/position.service';
 
@@ -20,7 +21,11 @@ export class PositionFormComponent implements OnInit {
   form!: any;
   shifts: string[] = ['A', 'B', 'C', 'R'];
 
-  constructor(private readonly positionService: PositionService, private readonly fb: FormBuilder) { }
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly router: Router,
+    private readonly positionService: PositionService,
+  ) { }
 
   ngOnInit(): void {
     this.form = this.initForm();

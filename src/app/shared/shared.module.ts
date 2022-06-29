@@ -13,6 +13,7 @@ import { DepartmentCardComponent } from './components/department-card/department
 
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { PositionCardComponent } from './components/position-card/position-card.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { MatSelectModule } from '@angular/material/select';
         DepartmentFormComponent,
         PositionFormComponent,
         EmployeeCardComponent,
-        DepartmentCardComponent
+        DepartmentCardComponent,
+        PositionCardComponent
     ],
     exports: [
         CommonModule,
@@ -40,7 +42,8 @@ import { MatSelectModule } from '@angular/material/select';
         DepartmentFormComponent,
         PositionFormComponent,
         EmployeeCardComponent,
-        DepartmentCardComponent
+        DepartmentCardComponent,
+        PositionCardComponent
     ],
 })
 export class SharedModule { }

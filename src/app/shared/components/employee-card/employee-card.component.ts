@@ -17,6 +17,8 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
   employeeId!: any;
   employeeFullName!: string;
 
+  err$ = new BehaviorSubject<string>('');
+
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly employeeService: EmployeeService,
@@ -32,9 +34,14 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
       this.employeeId = id;
     })
 
-    this.employeeService.getById(this.employeeId).subscribe(emp => {
-      this.employeeFullName = `${emp.firstName} ${emp.middleName} ${emp.lastName}`;
-      this.employee$.next(emp);
+    this.employeeService.getById(this.employeeId).subscribe({
+      next: (emp) => {
+        this.employeeFullName = `${emp.firstName} ${emp.middleName} ${emp.lastName}`;
+        this.employee$.next(emp);
+      },
+      error: (err) => {
+        this.err$.next(err.statusText);
+      }
     })
   }
 

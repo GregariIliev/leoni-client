@@ -48,16 +48,33 @@ export class PositionFormComponent implements OnInit {
   }
 
   onSubmit(position: Position) {
-    this.positionService.create(position).subscribe({
-      next: (position: Position) => {
-        
-      },
-      error: (e) => {
-        let error = e.error.errors[0].message;
-        this.errorSubject.next(error);
-      },
-      complete: () => { }
-    })
+
+    if (this.modify) {
+      
+      this.positionService.update(position, this.positionId).subscribe({
+        next: (data) => {
+        },
+        error: (err) => {
+          let error = err.error.errors[0].message;
+          this.errorSubject.next(error);
+        },
+        complete: () => {
+          this.modifySaved.emit();
+        }
+      })
+    } else {
+      this.positionService.create(position).subscribe({
+        next: (position: Position) => {
+          this.router.navigateByUrl(`/admin-panel/positions/${position.id}`);
+        },
+        error: (e) => {
+          let error = e.error.errors[0].message;
+          this.errorSubject.next(error);
+        },
+        complete: () => {
+        }
+      })
+    }
   }
 
   initForm(): FormGroup {

@@ -28,9 +28,9 @@ export class PositionCardComponent implements OnInit {
     this.getPosition();
   }
 
-  getPosition(){
+  getPosition() {
     this.activatedRoute.params.subscribe(({ id }) => {
-     this.positionId = id;
+      this.positionId = id;
     })
 
     this.positionService.getById(this.positionId).subscribe({

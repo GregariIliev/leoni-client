@@ -15,7 +15,7 @@ import { PositionCardComponent } from 'src/app/shared/components/position-card/p
 
 const routes: Routes = [
   {
-    path: '', component: AdminPanelComponent, children: [
+    path: '', component: AdminPanelComponent, canActivateChild: [AuthorizationGuard], children: [
       { path: 'hire-employee', component: EmployeeFormComponent, canActivate: [AuthorizationGuard], resolve: { allDepartments: DataResolver } },
       { path: 'create-department', component: DepartmentFormComponent, canActivate: [AuthorizationGuard], resolve: { allPositions: DataResolver } },
       { path: 'create-position', component: PositionFormComponent, canActivate: [AuthorizationGuard] },

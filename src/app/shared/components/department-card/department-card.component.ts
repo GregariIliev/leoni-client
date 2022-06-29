@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './department-card.component.html',
   styleUrls: ['./department-card.component.scss']
 })
-export class DepartmentCardComponent implements OnInit {
+export class DepartmentCardComponent implements OnInit, OnDestroy {
   modify: boolean = false
 
   department$ = new BehaviorSubject<any>({});
@@ -49,8 +49,13 @@ export class DepartmentCardComponent implements OnInit {
   }
 
   onPrint() {
-    this.department$.subscribe(dep => {
-      console.log(JSON.stringify(dep, null, 4));
+    this.department$.subscribe(data => {
+      console.log(JSON.stringify(data, null, 4));
     })
+
+  }
+
+  ngOnDestroy(): void {
+    this.department$.unsubscribe();
   }
 }

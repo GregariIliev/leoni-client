@@ -23,6 +23,16 @@ export class PositionCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getPosition();
   }
 
+  getPosition(){
+    this.activatedRoute.params.subscribe(({ id }) => {
+     this.positionId = id;
+    })
+
+    this.positionService.getById(this.positionId).subscribe(pos => {
+      this.position$.next(pos);
+    })
+  }
 }

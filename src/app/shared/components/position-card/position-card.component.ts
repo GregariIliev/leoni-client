@@ -44,6 +44,7 @@ export class PositionCardComponent implements OnInit {
   }
 
   onModify() {
+    this.getPosition();
     this.modify = !this.modify;
   }
 }

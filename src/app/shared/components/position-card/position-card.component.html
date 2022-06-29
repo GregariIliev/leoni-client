@@ -2,6 +2,7 @@
     <div class="info-rows">
         <span class="position-title">Position</span>
     </div>
+    <mat-error>{{(err$ | async)}}</mat-error>
     <div class="info-rows">
         <span class="position-name">{{(position$ | async).name}}</span>
     </div>

@@ -2,6 +2,7 @@
     <div class="info-rows">
         <span class="department-title">Departmetn</span>
     </div>
+    <mat-error>{{(error$ | async)}}</mat-error>
     <div class="info-rows">
         <span class="department-name">{{(department$ | async).name | uppercase}}</span>
     </div>

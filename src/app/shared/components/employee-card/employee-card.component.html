@@ -7,6 +7,7 @@
     <div class="info-rows">
         <span class="employee-name">{{employeeFullName}}</span>
     </div>
+    <mat-error>{{(err$ | async)}}</mat-error>
     <div class="info-rows">
         <span class="bold">Department:</span> {{(employee$ | async)?.Department?.name || "-------"}}
         <span class="bold">Position:</span> {{(employee$ | async)?.Position?.name || "-------"}}

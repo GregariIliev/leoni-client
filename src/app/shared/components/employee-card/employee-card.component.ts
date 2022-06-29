@@ -63,7 +63,8 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-   this.employee$.unsubscribe();
+    this.employee$.unsubscribe();
+    this.err$.unsubscribe();
   }
 
 }

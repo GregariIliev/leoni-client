@@ -9,7 +9,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./position-card.component.scss']
 })
 export class PositionCardComponent implements OnInit {
+  modify: boolean = false;
 
+  positions$ = new BehaviorSubject<any>({});
   constructor(
     private readonly activatedRoute: ActivatedRoute
   ) { }

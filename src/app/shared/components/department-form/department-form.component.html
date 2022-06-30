@@ -44,6 +44,6 @@
         </mat-form-field>
     </div>
     <input *ngIf="!modify" id="modify-buttons" type="submit" value="Register" [disabled]="form.invalid">
-    <input *ngIf="modify" id="modify-buttons" type="submit" value="Save">
+    <input *ngIf="modify" id="modify-buttons" type="submit" value="Save" [disabled]="form.invalid">
     <mat-error *ngIf="errorMessage | async as error">{{error | titlecase}}</mat-error>
 </form>

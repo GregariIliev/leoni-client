@@ -21,12 +21,13 @@ const routes: Routes = [
       { path: 'create-position', component: PositionFormComponent, canActivate: [AuthorizationGuard] },
 
       { path: 'employees', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-      { path: 'employees/:id', component: EmployeeCardComponent, canActivate: [AuthorizationGuard] },
+      { path: 'employees/:id', component: EmployeeCardComponent, resolve: { employee: DataResolver }, canActivate: [AuthorizationGuard] },
 
       { path: 'departments', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-      { path: 'departments/:id', component: DepartmentCardComponent, canActivate: [AuthorizationGuard] },
+      { path: 'departments/:id', component: DepartmentCardComponent, resolve: { department: DataResolver }, canActivate: [AuthorizationGuard] },
+
       { path: 'positions', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-      { path: 'positions/:id', component: PositionCardComponent, canActivate: [AuthorizationGuard] },
+      { path: 'positions/:id', component: PositionCardComponent, resolve: { position: DataResolver }, canActivate: [AuthorizationGuard] },
     ]
   },
 ];

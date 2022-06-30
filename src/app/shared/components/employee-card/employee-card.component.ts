@@ -34,15 +34,9 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
       this.employeeId = id;
     })
 
-    this.employeeService.getById(this.employeeId).subscribe({
-      next: (emp) => {
-        this.employeeFullName = `${emp.firstName} ${emp.middleName} ${emp.lastName}`;
-        this.employee$.next(emp);
-      },
-      error: (err) => {
-        this.err$.next(err.statusText);
-      }
-    })
+    const employee = this.activatedRoute.snapshot.data['employee'];
+    this.employeeFullName = `${employee.firstName} ${employee.middleName} ${employee.lastName}`
+    this.employee$.next(employee)
   }
 
   onModify() {

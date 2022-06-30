@@ -5,14 +5,17 @@
 
 Use the Development server.
 
-This application helps you to management Employees, Departments and Positions in one company.
+This application helps you to management Employees, Departments, Positions and shifts (this one is not implemented such as independent model) in one company.
 
-The Employee have the next attribues: names, address, phone, salary, shift, Departmyn, Position, Admin, email, password.
+The Employee have the next attribues: names, address, phone, salary, shifts, created at --date--, updated at --date-- , Department, Position, Admin, email, password.
+
 One Employee can be Admin (self reference). The logic to create or convert one Employee to Admin is not implemented.
+
+The Employee can work in one Department one Positions and one shift.
 
 Departments and Positions has relationship many to many.
 
-You can create update and delete the Employees, Departments and Positions.
+You can create update and delete the Employees, Departments and Positions. (shitfs not support this)
 
 See the leoni-server to view the API.
 

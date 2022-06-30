@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 
 import { EmployeeService } from '../../services/employee.service';
 import { DepartmentService } from '../../services/department.service';
@@ -36,7 +35,6 @@ export class EmployeeFormComponent implements OnInit {
 
   constructor(
     private readonly router: Router,
-    private readonly activatedRoute: ActivatedRoute,
     private readonly employeeService: EmployeeService,
     private readonly departmentService: DepartmentService,
     private readonly fb: FormBuilder
@@ -59,7 +57,11 @@ export class EmployeeFormComponent implements OnInit {
       })
     }
 
-    this.departments = this.activatedRoute.snapshot.data['allDepartments'];
+    this.departmentService.getAll().subscribe({
+      next: (dep) => {
+        this.departments = dep
+      }
+    })
   }
 
   onChangeDepartment(event: any) {

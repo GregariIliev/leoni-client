@@ -33,14 +33,8 @@ export class PositionCardComponent implements OnInit, OnDestroy {
       this.positionId = id;
     })
 
-    this.positionService.getById(this.positionId).subscribe({
-      next: (pos) => {
-        this.position$.next(pos);
-      },
-      error: (err) => {
-        this.err$.next(err.statusText);
-      }
-    })
+    const position = this.activatedRoute.snapshot.data['position'];
+    this.position$.next(position);
   }
 
   onModify() {

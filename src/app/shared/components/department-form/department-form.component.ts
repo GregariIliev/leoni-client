@@ -3,7 +3,6 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 
 import { DepartmentService } from '../../services/department.service';
 import { PositionService } from '../../services/position.service';
@@ -32,7 +31,6 @@ export class DepartmentFormComponent implements OnInit {
 
   constructor(
     private readonly router: Router,
-    private readonly activatedRoute: ActivatedRoute,
     private readonly departmentService: DepartmentService,
     private readonly positionService: PositionService,
     private readonly fb: FormBuilder
@@ -53,7 +51,9 @@ export class DepartmentFormComponent implements OnInit {
       })
     }
 
-    this.positions = this.activatedRoute.snapshot.data['allPositions'];
+    this.positionService.getAll().subscribe(pos => {
+      this.positions = pos;
+    })
   }
 
   onSubmit() {
@@ -92,7 +92,7 @@ export class DepartmentFormComponent implements OnInit {
       name: ['', [Validators.required, Validators.maxLength(20)]],
       maxEmployees: ['', [Validators.required, Validators.min(5), Validators.max(20)]],
       salaryMultiplayer: ['', [Validators.required, Validators.min(1), Validators.max(2)]],
-      positions: [[''], Validators.required]
+      positions: ['', [Validators.required]]
     })
   }
 }

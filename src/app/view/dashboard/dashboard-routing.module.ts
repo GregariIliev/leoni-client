@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard.component';
 import { AuthorizationGuard } from 'src/app/guards/authorization.guard';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, canActivate: [AuthorizationGuard], resolve: { stats: DataResolver } }
+  { path: '', component: DashboardComponent, canActivate: [AuthorizationGuard], resolve: { stats: DataResolver }, title: 'Dashboard' }
 ];
 
 @NgModule({

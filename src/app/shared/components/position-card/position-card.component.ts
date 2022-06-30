@@ -15,6 +15,7 @@ export class PositionCardComponent implements OnInit, OnDestroy {
 
   position$ = new BehaviorSubject<any>({});
   positionId!: string;
+  printCard!: string;
 
   err$ = new BehaviorSubject<string>('');
 
@@ -33,8 +34,16 @@ export class PositionCardComponent implements OnInit, OnDestroy {
       this.positionId = id;
     })
 
-    const position = this.activatedRoute.snapshot.data['position'];
-    this.position$.next(position);
+    this.positionService.getById(this.positionId).subscribe({
+      next: (pos) => {
+        this.position$.next(pos);
+        this.printCard = JSON.stringify(pos, null, 4);
+      },
+      error: (err) => {
+        this.err$.next(err);
+      },
+      complete: () => { }
+    })
   }
 
   onModify() {
@@ -49,9 +58,7 @@ export class PositionCardComponent implements OnInit, OnDestroy {
   }
 
   onPrint() {
-    this.position$.subscribe(pos => {
-      console.log(JSON.stringify(pos, null, 4));
-    })
+    console.log(this.printCard);
   }
 
   ngOnDestroy(): void {

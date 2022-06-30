@@ -1,5 +1,8 @@
 # LeoniClient
 
+## This server can be running whit leoni-client.
+## You can login whit EMAIL: admin@abv.bg and PASSWORD: admin
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
 ## Development server

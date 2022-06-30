@@ -48,7 +48,7 @@ export class DataResolver implements Resolve<boolean> {
       return this.positionService.getAll();
 
     } else if (state.url.endsWith('hire-employee')) {
-      return this.deparmtentService.getAllDepartmentsPositions();
+      return this.deparmtentService.getAll();
 
     } else if (state.url.endsWith('create-department')) {
       return this.positionService.getAll();

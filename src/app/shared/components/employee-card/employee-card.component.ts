@@ -16,6 +16,7 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
   employee$ = new BehaviorSubject<any>({});
   employeeId!: any;
   employeeFullName!: string;
+  printCard!: string;
 
   err$ = new BehaviorSubject<string>('');
 
@@ -34,9 +35,17 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
       this.employeeId = id;
     })
 
-    const employee = this.activatedRoute.snapshot.data['employee'];
-    this.employeeFullName = `${employee.firstName} ${employee.middleName} ${employee.lastName}`
-    this.employee$.next(employee)
+    this.employeeService.getById(this.employeeId).subscribe({
+      next: (emp) => {
+        this.employeeFullName = `${emp.firstName} ${emp.middleName} ${emp.lastName}`
+        this.employee$.next(emp);
+        this.printCard = JSON.stringify(emp, null, 4);
+      },
+      error: (err) => {
+        this.err$.next(err);
+      },
+      complete: () => { }
+    })
   }
 
   onModify() {
@@ -55,9 +64,7 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
   }
 
   onPrint() {
-    this.employee$.subscribe(emp => {
-      console.log(JSON.stringify(emp, null, 4));
-    })
+    console.log(this.printCard);
   }
 
   ngOnDestroy(): void {

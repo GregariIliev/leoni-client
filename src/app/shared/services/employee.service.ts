@@ -24,7 +24,7 @@ export class EmployeeService {
   }
 
   createEmplyee(employee: any) {
-    return this.http.post<any>(`${this.API}/employees/register`, employee);
+    return this.http.post<any>(`${this.API}/employees/create`, employee);
   }
 
   getById(employeeId: number) {

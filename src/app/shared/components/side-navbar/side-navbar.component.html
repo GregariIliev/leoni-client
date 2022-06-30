@@ -1,6 +1,8 @@
 <div [ngClass]="'dsh-sidebar'">
     <div [ngClass]="'dsh-avatar'">
-        <img src="/assets/profile.png" alt="Avatar" class="avatar">
+        <div class="avatar-container">
+            <img src="/assets/profile.png" alt="Avatar" class="avatar">
+        </div>
         <a routerLink="/admin-panel" routerLinkActive="active" ariaCurrentWhenActive="page">Admin Panel</a>
     </div>
     <ul [ngClass]="'dsh-unorder-list'">

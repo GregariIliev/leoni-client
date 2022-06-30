@@ -3,6 +3,19 @@
 ## This client work together whit leoni-server.
 ## You can login whit EMAIL: admin@abv.bg and PASSWORD: admin
 
+Use the Development server.
+
+This application helps you to management Employees, Departments and Positions in one company.
+
+The Employee have the next attribues: names, address, phone, salary, shift, Departmyn, Position, Admin, email, password.
+One Employee can be Admin (self reference). The logic to create or convert one Employee to Admin is not implemented.
+
+Departments and Positions has relationship many to many.
+
+You can create update and delete the Employees, Departments and Positions.
+
+See the leoni-server to view the API.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
 ## Development server

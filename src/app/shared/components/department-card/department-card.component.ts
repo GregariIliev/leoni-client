@@ -33,14 +33,8 @@ export class DepartmentCardComponent implements OnInit, OnDestroy {
       this.departmentId = id
     })
 
-    this.departmentService.getById(this.departmentId).subscribe({
-      next: (dep) => {
-        this.department$.next(dep);
-      },
-      error: (err) => {
-        this.err$.next(err.statusText);
-      }
-    })
+    const department = this.activatedRoute.snapshot.data['department'];
+    this.department$.next(department)
   }
 
   onModify() {

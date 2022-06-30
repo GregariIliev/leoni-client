@@ -3,6 +3,7 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { DepartmentService } from '../../services/department.service';
 import { PositionService } from '../../services/position.service';
@@ -31,6 +32,7 @@ export class DepartmentFormComponent implements OnInit {
 
   constructor(
     private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute,
     private readonly departmentService: DepartmentService,
     private readonly positionService: PositionService,
     private readonly fb: FormBuilder
@@ -51,9 +53,7 @@ export class DepartmentFormComponent implements OnInit {
       })
     }
 
-    this.positionService.getAll().subscribe(positions => {
-      this.positions = positions
-    })
+    this.positions = this.activatedRoute.snapshot.data['allPositions'];
   }
 
   onSubmit() {

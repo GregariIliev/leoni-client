@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { EmployeeService } from '../../services/employee.service';
 import { DepartmentService } from '../../services/department.service';
@@ -20,21 +21,22 @@ import { Position } from 'src/app/interface/Position';
 export class EmployeeFormComponent implements OnInit {
   @Input() modify!: boolean;
   @Input() empCard$!: BehaviorSubject<Employee>;
-  
+
   @Output() modifySaved = new EventEmitter<boolean>();
-  
+
   errorSubject = new BehaviorSubject<any>('');
   errorMessage = this.errorSubject.asObservable();
-  
+
   public departments!: any;
   public positions!: any;
   public shifts!: any;
-  
+
   form!: FormGroup;
   employeeId!: number;
 
   constructor(
     private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute,
     private readonly employeeService: EmployeeService,
     private readonly departmentService: DepartmentService,
     private readonly fb: FormBuilder
@@ -57,9 +59,7 @@ export class EmployeeFormComponent implements OnInit {
       })
     }
 
-    this.departmentService.getAll().subscribe((dep: Department[]) => {
-      this.departments = dep
-    })
+    this.departments = this.activatedRoute.snapshot.data['allDepartments'];
   }
 
   onChangeDepartment(event: any) {

@@ -17,10 +17,6 @@ export class DepartmentService {
     return this.http.get<Department[]>(`${this.API}/departments`);
   }
 
-  getAllDepartmentsPositions(): Observable<Department> {
-    return this.http.get<Department>(`${this.API}/departments-positions`);
-  }
-
   count(): Observable<Department> {
     return this.http.get<Department>(`${this.API}/departments/count`);
   }

@@ -16,18 +16,18 @@ import { PositionCardComponent } from 'src/app/shared/components/position-card/p
 const routes: Routes = [
   {
     path: '', component: AdminPanelComponent, canActivateChild: [AuthorizationGuard], title: 'Admin Panel', children: [
-      { path: 'hire-employee', component: EmployeeFormComponent, canActivate: [AuthorizationGuard], resolve: { allDepartments: DataResolver }, title: 'Hire Employee' },
-      { path: 'create-department', component: DepartmentFormComponent, canActivate: [AuthorizationGuard], resolve: { allPositions: DataResolver }, title: 'Create Department' },
+      { path: 'hire-employee', component: EmployeeFormComponent, canActivate: [AuthorizationGuard], title: 'Hire Employee' },
+      { path: 'create-department', component: DepartmentFormComponent, canActivate: [AuthorizationGuard], title: 'Create Department' },
       { path: 'create-position', component: PositionFormComponent, canActivate: [AuthorizationGuard], title: 'Create Position' },
 
       { path: 'employees', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-      { path: 'employees/:id', component: EmployeeCardComponent, resolve: { employee: DataResolver }, canActivate: [AuthorizationGuard], title: 'Employee' },
+      { path: 'employees/:id', component: EmployeeCardComponent, canActivate: [AuthorizationGuard], title: 'Employee' },
 
       { path: 'departments', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-      { path: 'departments/:id', component: DepartmentCardComponent, resolve: { department: DataResolver }, canActivate: [AuthorizationGuard], title: 'Department' },
+      { path: 'departments/:id', component: DepartmentCardComponent, canActivate: [AuthorizationGuard], title: 'Department' },
 
       { path: 'positions', loadChildren: () => import('../table/table.module').then(m => m.TableModule) },
-      { path: 'positions/:id', component: PositionCardComponent, resolve: { position: DataResolver }, canActivate: [AuthorizationGuard], title: 'Position' },
+      { path: 'positions/:id', component: PositionCardComponent, canActivate: [AuthorizationGuard], title: 'Position' },
     ]
   },
 ];

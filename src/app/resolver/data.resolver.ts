@@ -26,32 +26,18 @@ export class DataResolver implements Resolve<boolean> {
         this.deparmtentService.count(),
         this.positionService.count()]);
 
-    } else if (state.url.match(/employees\/\d+/)) {
-      const id = route.params;
-      return this.employeeService.getById(id['id']);
     }
     else if (state.url.endsWith('employees')) {
       return this.employeeService.getAll();
 
-    } else if (state.url.match(/departments\/\d+/)) {
-      const id = route.params;
-      return this.deparmtentService.getById(id['id']);
     }
     else if (state.url.endsWith('departments')) {
       return this.deparmtentService.getAll();
 
-    } else if (state.url.match(/positions\/\d+/)) {
-      const id = route.params;
-      return this.positionService.getById(id['id']);
     }
     else if (state.url.endsWith('positions')) {
       return this.positionService.getAll();
 
-    } else if (state.url.endsWith('hire-employee')) {
-      return this.deparmtentService.getAll();
-
-    } else if (state.url.endsWith('create-department')) {
-      return this.positionService.getAll();
     }
     return of(false);
   }

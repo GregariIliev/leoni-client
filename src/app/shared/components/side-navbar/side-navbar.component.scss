@@ -31,20 +31,6 @@
             width: 100%;
             border-radius: 50%;
         }
-
-        a {
-            border-radius: 5px;
-            background-color: #0d3957;
-            text-decoration: none;
-            color: white;
-            display: block;
-            padding: 5px;
-            margin-top: 10px;
-        }
-
-        a:hover {
-            background-color: red;
-        }
     }
 
     .dsh-unorder-list {
@@ -59,37 +45,22 @@
         li {
             list-style: none;
             text-align: center;
-            margin: 5px;
-            padding: 0px 20px;
         }
 
-        a {
-            border-radius: 5px;
-            background-color: #0d3957;
-            text-decoration: none;
-            color: white;
-            display: block;
-            padding: 5px;
-        }
-
-        a:hover {
-            background-color: red;
-        }
     }
 
-    button {
-        border-radius: 5px;
-        border: none;
+    .btn {
         background-color: #0d3957;
         text-decoration: none;
         color: white;
         display: block;
         padding: 5px;
-        margin-top: 10px;
-        cursor: pointer;
+        margin: 5px 0px;
+        border: none;
     }
 
-    button:hover {
+    .btn:hover {
         background-color: red;
+        cursor: pointer;
     }
 }

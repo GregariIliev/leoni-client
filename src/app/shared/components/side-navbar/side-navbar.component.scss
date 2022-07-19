@@ -7,18 +7,16 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background-color: #ffffff7a;
     border-radius: 10px 0px 0px 10px;
 
     .dsh-avatar {
-        width: 45%;
-        height: 120px;
+        width: 50%;
         border-radius: 5%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
         text-align: center;
 

@@ -2,6 +2,9 @@
     <h1 *ngIf="!modify">Hire new Employee</h1>
     <h1 *ngIf="modify">Modify Employee</h1>
     <div [ngClass]="'register-name-data'">
+        <!-- <input type="text" name="firstName" id="firstName" formControlName="firstName" placeholder="First Name">
+        <input type="text" name="middleName" id="middleName" formControlName="middleName" placeholder="Middle Name">
+        <input type="text" name="lastName" id="lastName" formControlName="lastName" placeholder="Last Name"> -->
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>First Name</mat-label>
             <input type="text" matInput formControlName="firstName" placeholder="Example">
@@ -34,6 +37,8 @@
         </mat-form-field>
     </div>
     <div class="adress-phone">
+        <!-- <input type="text" name="address" formControlName="address" placeholder="Address">
+        <input type="text" name="phone" formControlName="phone" placeholder="Phone"> -->
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Address Name</mat-label>
             <input type="text" matInput formControlName="address" placeholder="Example">
@@ -57,6 +62,10 @@
     </div>
     <div [ngClass]="'register-work-data'">
         <div [ngClass]="'register-select'">
+            <!-- <label for="department">Departmet</label>
+            <select name="department" >
+                <option *ngFor="dep of departments" value=""></option>
+            </select> -->
             <mat-form-field appearance="fill">
                 <mat-label>Department</mat-label>
                 <mat-select formControlName="department_id" (selectionChange)="onChangeDepartment($event)"

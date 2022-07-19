@@ -1,13 +1,19 @@
 :host {
     width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .dash-statistic {
     display: flex;
     height: 100%;
+    width: 80%;
     justify-content: space-evenly;
+    align-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #ffffff7a;
 
     .dash-stats {
         display: flex;
@@ -15,10 +21,9 @@
         align-items: center;
         align-items: center;
         border: 1px solid black;
-        padding: 24px;
-        border-radius: 8px;
+        padding: 14px;
         margin: 5px;
-        background-color: #0d3957c4;
+        background-color: #0d3957;
     }
 
     .dash-stats h2,

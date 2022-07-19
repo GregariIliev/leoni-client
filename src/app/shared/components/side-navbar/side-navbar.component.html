@@ -3,10 +3,12 @@
         <div class="avatar-container">
             <img src="/assets/profile.png" alt="Avatar" class="avatar">
         </div>
-        <a routerLink="/admin-panel" routerLinkActive="active" ariaCurrentWhenActive="page">Admin Panel</a>
+        <a class="btn" routerLink="/admin-panel" routerLinkActive="active" ariaCurrentWhenActive="page">Admin Panel</a>
     </div>
     <ul [ngClass]="'dsh-unorder-list'">
-        <li><a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a></li>
+        <li><a class="btn" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a></li>
+        <li><a class="btn" routerLink="/test" routerLinkActive="active" ariaCurrentWhenActive="page">Test</a></li>
+        <li><a class="btn" routerLink="/test" routerLinkActive="active" ariaCurrentWhenActive="page">Test</a></li>
     </ul>
-    <button (click)="onLogout()">Logout</button>
+    <button class="btn" (click)="onLogout()">Logout</button>
 </div>
